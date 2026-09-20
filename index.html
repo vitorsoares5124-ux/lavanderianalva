@@ -800,12 +800,12 @@
     (function () {
         /* ─── Dados dos vídeos ─── */
         var videos = [
-            { src: 'depoimentos/video2.mp4', label: 'Máquina Rotativa #1' },
-            { src: 'depoimentos/video3.mp4', label: 'Máquina Rotativa #2' },
-            { src: 'depoimentos/video4.mp4', label: 'Máquina Rotativa #3' },
-            { src: 'depoimentos/video5.mp4', label: 'Máquina Rotativa #4' },
-            { src: 'depoimentos/video6.mp4', label: 'Máquina Rotativa #5' },
-            { src: 'depoimentos/video7.mp4', label: 'Máquina Rotativa #6' },
+            { src: 'depoimentos/video2.mp4', poster: 'assets/thumbnails/rotativa-1.jpg', label: 'Máquina Rotativa #1' },
+            { src: 'depoimentos/video3.mp4', poster: 'assets/thumbnails/rotativa-2.jpg', label: 'Máquina Rotativa #2' },
+            { src: 'depoimentos/video4.mp4', poster: 'assets/thumbnails/rotativa-3.jpg', label: 'Máquina Rotativa #3' },
+            { src: 'depoimentos/video5.mp4', poster: 'assets/thumbnails/rotativa-4.jpg', label: 'Máquina Rotativa #4' },
+            { src: 'depoimentos/video6.mp4', poster: 'assets/thumbnails/rotativa-5.jpg', label: 'Máquina Rotativa #5' },
+            { src: 'depoimentos/video7.mp4', poster: 'assets/thumbnails/rotativa-6.jpg', label: 'Máquina Rotativa #6' },
         ];
 
         var track     = document.getElementById('rotativa-track');
@@ -827,7 +827,8 @@
             card.dataset.src = v.src;
 
             var vid = document.createElement('video');
-            vid.src = v.src;
+            vid.src = encodeURI(v.src);
+            vid.poster = v.poster;
             vid.muted = true;
             vid.loop = true;
             vid.playsInline = true;
@@ -853,11 +854,12 @@
 
             /* Preview hover */
             card.addEventListener('mouseenter', function () { vid.play().catch(function(){}); });
-            card.addEventListener('mouseleave', function () { vid.pause(); });
+            card.addEventListener('mouseleave', function () { vid.pause(); vid.currentTime = 0; });
 
             /* Abrir modal */
             function openModal() {
-                modalVid.src = v.src;
+                modalVid.src = encodeURI(v.src);
+                modalVid.poster = v.poster;
                 modal.classList.add('open');
                 modalVid.play().catch(function(){});
                 document.body.style.overflow = 'hidden';
@@ -1114,12 +1116,12 @@
     <script>
     (function () {
         var videos = [
-            { src: 'depoimentos 2/WhatsApp Video 2026-09-17 at 17.34.45.mp4', label: 'Cortinas #1' },
-            { src: 'depoimentos 2/WhatsApp Video 2026-09-1rtrt7 at 17.34.39.mp4', label: 'Cortinas #2' },
-            { src: 'depoimentos 2/rtrtrt.mp4', label: 'Cortinas #3' },
-            { src: 'depoimentos 2/t44wtw4t.mp4', label: 'Cortinas #4' },
-            { src: 'depoimentos 2/wtw4tw4t.mp4', label: 'Cortinas #5' },
-            { src: 'depoimentos 2/yukyuik.mp4', label: 'Cortinas #6' },
+            { src: 'depoimentos 2/WhatsApp Video 2026-09-17 at 17.34.45.mp4', poster: 'assets/thumbnails/cortinas-1.jpg', label: 'Cortinas #1' },
+            { src: 'depoimentos 2/WhatsApp Video 2026-09-1rtrt7 at 17.34.39.mp4', poster: 'assets/thumbnails/cortinas-2.jpg', label: 'Cortinas #2' },
+            { src: 'depoimentos 2/rtrtrt.mp4', poster: 'assets/thumbnails/cortinas-3.jpg', label: 'Cortinas #3' },
+            { src: 'depoimentos 2/t44wtw4t.mp4', poster: 'assets/thumbnails/cortinas-4.jpg', label: 'Cortinas #4' },
+            { src: 'depoimentos 2/wtw4tw4t.mp4', poster: 'assets/thumbnails/cortinas-5.jpg', label: 'Cortinas #5' },
+            { src: 'depoimentos 2/yukyuik.mp4', poster: 'assets/thumbnails/cortinas-6.jpg', label: 'Cortinas #6' },
         ];
 
         var track    = document.getElementById('ct-track');
@@ -1139,7 +1141,8 @@
             card.setAttribute('aria-label', 'Assistir ' + v.label);
 
             var vid = document.createElement('video');
-            vid.src = v.src;
+            vid.src = encodeURI(v.src);
+            vid.poster = v.poster;
             vid.muted = true; vid.loop = true; vid.playsInline = true; vid.preload = 'metadata';
             vid.setAttribute('aria-hidden', 'true');
 
@@ -1154,10 +1157,11 @@
             track.appendChild(card);
 
             card.addEventListener('mouseenter', function () { vid.play().catch(function(){}); });
-            card.addEventListener('mouseleave', function () { vid.pause(); });
+            card.addEventListener('mouseleave', function () { vid.pause(); vid.currentTime = 0; });
 
             function openModal() {
-                modalVid.src = v.src;
+                modalVid.src = encodeURI(v.src);
+                modalVid.poster = v.poster;
                 modal.classList.add('open');
                 modalVid.play().catch(function(){});
                 document.body.style.overflow = 'hidden';

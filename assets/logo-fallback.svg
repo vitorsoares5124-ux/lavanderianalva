@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 280" role="img" aria-labelledby="title desc">
+  <title id="title">NS Lavanderia</title>
+  <desc id="desc">Monograma NS em fundo azul bebê circular, com a palavra LAVANDERIA abaixo.</desc>
+
+  <circle cx="110" cy="108" r="86" fill="#9BD7F1"/>
+
+  <text x="110" y="78" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="600" fill="#1B4A86">N</text>
+  <text x="110" y="148" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="600" fill="#FFFFFF">S</text>
+
+  <text x="110" y="246" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="9" fill="#1B4A86">LAVANDERIA</text>
+</svg>

@@ -1,0 +1,8 @@
+# Executáveis grandes
+*.exe
+ProtonVPN_v5.1.8_x64.exe
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

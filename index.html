@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NS Lavanderia | Higienização de Alto Padrão em Arujá/SP</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPrimary: '#9BD7F1',
+                        brandSecondary: '#2E69AF',
+                        brandDark: '#112233',
+                        brandGray: '#F4F7FA',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <noscript><style>.reveal,.reveal-scale{opacity:1 !important;transform:none !important;}</style></noscript>
+</head>
+<body class="bg-white text-brandDark font-sans antialiased selection:bg-[#9BD7F1]/30 selection:text-[#2E69AF]">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-[#9BD7F1]/30 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-3.5 sm:py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#9BD7F1] flex items-center justify-center text-[#2E69AF] font-serif font-bold text-base sm:text-lg shadow-sm group-hover:scale-105 transition-transform">
+                    NS
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-base sm:text-lg text-[#2E69AF] tracking-widest leading-none">NS</span>
+                    <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.2em] text-slate-500 mt-0.5 sm:mt-1">Lavanderia</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] xl:text-sm font-medium tracking-wide text-slate-700">
+                <a href="#servicos" class="hover:text-[#2E69AF] transition-colors py-1">Serviços</a>
+                <a href="#maquina-rotativa" class="hover:text-[#2E69AF] transition-colors py-1">Máquina Rotativa</a>
+                <a href="#cortinas-pe-direito" class="hover:text-[#2E69AF] transition-colors py-1">Pé Direito</a>
+                <a href="#processo" class="hover:text-[#2E69AF] transition-colors py-1">Processo</a>
+                <a href="#diferenciais" class="hover:text-[#2E69AF] transition-colors py-1">Diferenciais</a>
+                <a href="#horarios" class="hover:text-[#2E69AF] transition-colors py-1">Horários</a>
+                <a href="#localizacao" class="hover:text-[#2E69AF] transition-colors py-1">Localização</a>
+            </nav>
+
+            <!-- Actions (CTA + Mobile Hamburger) -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <a href="https://wa.me/5511952613887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="bg-[#2E69AF] text-white px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase flex items-center gap-1.5 sm:gap-2 hover:bg-[#1f4879] transition-all shadow-md hover:shadow-lg">
+                    <i class="fab fa-whatsapp text-sm"></i> <span class="hidden xs:inline">Orçamento</span><span class="xs:hidden">Contato</span>
+                </a>
+
+                <!-- Hamburger Button (Mobile / Tablet) -->
+                <button id="mobile-menu-btn" type="button" aria-label="Abrir Menu de Navegação" aria-expanded="false" aria-controls="mobile-drawer" class="lg:hidden w-10 h-10 rounded-full bg-slate-50 border border-slate-200/80 flex items-center justify-center text-slate-700 hover:text-[#2E69AF] hover:bg-slate-100 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2E69AF]">
+                    <span class="w-5 h-5 relative flex items-center justify-center pointer-events-none" aria-hidden="true">
+                        <span class="ham-line ham-line-1 absolute w-4 h-0.5 bg-current rounded-full transition-all duration-300 -translate-y-1.5"></span>
+                        <span class="ham-line ham-line-2 absolute w-4 h-0.5 bg-current rounded-full transition-all duration-300"></span>
+                        <span class="ham-line ham-line-3 absolute w-4 h-0.5 bg-current rounded-full transition-all duration-300 translate-y-1.5"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Backdrop Overlay -->
+        <div id="mobile-backdrop" class="lg:hidden fixed inset-0 top-[65px] bg-brandDark/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-drawer" class="lg:hidden fixed inset-x-0 top-[65px] bg-white border-b border-slate-200 shadow-2xl opacity-0 pointer-events-none -translate-y-3 transition-all duration-300 ease-out z-50 max-h-[calc(100svh-65px)] overflow-y-auto">
+            <div class="px-5 py-6 flex flex-col gap-1 max-w-lg mx-auto">
+                <span class="text-[10px] uppercase font-semibold tracking-[0.2em] text-slate-400 px-3 mb-1 block">Navegação Rápida</span>
+                
+                <a href="#servicos" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-2xl text-slate-700 hover:text-[#2E69AF] hover:bg-[#F4F7FA] font-medium text-sm transition-all">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-sparkles text-[#2E69AF] text-sm w-4 text-center"></i> Nossos Serviços
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+
+                <a href="#maquina-rotativa" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-2xl text-slate-700 hover:text-[#2E69AF] hover:bg-[#F4F7FA] font-medium text-sm transition-all">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-rotate text-[#2E69AF] text-sm w-4 text-center"></i> Máquina Rotativa
+                    </span>
+                    <span class="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-[#9BD7F1]/30 text-[#1f4879]">Vídeos</span>
+                </a>
+
+                <a href="#cortinas-pe-direito" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-2xl text-slate-700 hover:text-[#2E69AF] hover:bg-[#F4F7FA] font-medium text-sm transition-all">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-arrows-up-down text-[#2E69AF] text-sm w-4 text-center"></i> Cortinas de Pé Direito
+                    </span>
+                    <span class="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Especialidade</span>
+                </a>
+
+                <a href="#processo" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-2xl text-slate-700 hover:text-[#2E69AF] hover:bg-[#F4F7FA] font-medium text-sm transition-all">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-list-check text-[#2E69AF] text-sm w-4 text-center"></i> Como Funciona o Processo
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+
+                <a href="#diferenciais" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-2xl text-slate-700 hover:text-[#2E69AF] hover:bg-[#F4F7FA] font-medium text-sm transition-all">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-award text-[#2E69AF] text-sm w-4 text-center"></i> Diferenciais de Qualidade
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+
+                <a href="#horarios" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-2xl text-slate-700 hover:text-[#2E69AF] hover:bg-[#F4F7FA] font-medium text-sm transition-all">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-regular fa-clock text-[#2E69AF] text-sm w-4 text-center"></i> Horários de Atendimento
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+
+                <a href="#localizacao" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-2xl text-slate-700 hover:text-[#2E69AF] hover:bg-[#F4F7FA] font-medium text-sm transition-all">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-[#2E69AF] text-sm w-4 text-center"></i> Localização em Arujá
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+
+                <!-- CTA dentro do menu mobile -->
+                <div class="mt-4 pt-4 border-t border-slate-100 flex flex-col gap-2.5">
+                    <a href="https://wa.me/5511952613887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="w-full bg-[#2E69AF] text-white py-3 px-4 rounded-2xl text-xs font-semibold tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-[#1f4879] shadow-md transition-all text-center">
+                        <i class="fab fa-whatsapp text-base"></i> Solicitar Orçamento
+                    </a>
+                    <div class="flex items-center justify-between px-3 py-1.5 text-xs text-slate-500 font-light">
+                        <span><i class="fa-solid fa-phone text-[#2E69AF] mr-1"></i> (11) 95261-3887</span>
+                        <span>Arujá / SP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        /* Animação do botão hambúrguer para X perfeito */
+        #mobile-menu-btn.is-active .ham-line-1 {
+            transform: translateY(0) rotate(45deg);
+        }
+        #mobile-menu-btn.is-active .ham-line-2 {
+            opacity: 0;
+            transform: scale(0);
+        }
+        #mobile-menu-btn.is-active .ham-line-3 {
+            transform: translateY(0) rotate(-45deg);
+        }
+        #mobile-drawer.is-open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        #mobile-backdrop.is-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+
+    <script>
+        (function() {
+            var btn = document.getElementById('mobile-menu-btn');
+            var drawer = document.getElementById('mobile-drawer');
+            var backdrop = document.getElementById('mobile-backdrop');
+            var links = document.querySelectorAll('.mobile-nav-link');
+
+            if (!btn || !drawer || !backdrop) return;
+
+            function toggleMenu() {
+                var isOpen = drawer.classList.contains('is-open');
+                if (isOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            }
+
+            function openMenu() {
+                btn.classList.add('is-active');
+                btn.setAttribute('aria-expanded', 'true');
+                drawer.classList.add('is-open');
+                backdrop.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                btn.classList.remove('is-active');
+                btn.setAttribute('aria-expanded', 'false');
+                drawer.classList.remove('is-open');
+                backdrop.classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+
+            btn.addEventListener('click', toggleMenu);
+            backdrop.addEventListener('click', closeMenu);
+
+            links.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeMenu();
+                });
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+
+    <!-- HERO SECTION -->
+    <section class="relative flex items-center px-6 lg:px-16 pt-28 pb-10 sm:pt-32 sm:pb-14 min-h-[82svh] lg:min-h-[92vh] overflow-hidden bg-white">
+        <!-- Fundo editorial: véu suave + trama vertical sutil (trama de tecido) + monograma -->
+        <div aria-hidden="true" class="absolute inset-0 pointer-events-none">
+            <div class="absolute inset-x-0 top-0 h-2/3 bg-gradient-to-b from-[#9BD7F1]/25 via-[#9BD7F1]/10 to-transparent"></div>
+            <div class="absolute inset-0 hidden sm:block [background-image:repeating-linear-gradient(90deg,rgba(46,105,175,0.055)_0_1px,transparent_1px_76px)]"></div>
+            <span class="absolute -bottom-10 left-1/2 -translate-x-1/2 hidden sm:block font-serif font-bold leading-none select-none text-[#2E69AF]/[0.05] text-[34vw] lg:text-[22rem] tracking-tight">NS</span>
+            <div class="absolute inset-x-0 bottom-0 h-px bg-slate-200/70"></div>
+        </div>
+
+        <div class="relative max-w-3xl mx-auto text-center z-10 w-full">
+            <!-- Sobretítulo editorial com filetes, sem pílula -->
+            <div class="reveal flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-7">
+                <span aria-hidden="true" class="h-px w-8 sm:w-16 bg-[#2E69AF]/40"></span>
+                <span class="text-[11px] sm:text-xs font-semibold tracking-[0.22em] sm:tracking-[0.3em] uppercase text-[#2E69AF]">NS Lavanderia · Arujá, São Paulo</span>
+                <span aria-hidden="true" class="h-px w-8 sm:w-16 bg-[#2E69AF]/40"></span>
+            </div>
+
+            <h1 class="reveal font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brandDark mb-0 leading-[1.08]" style="--reveal-delay:80ms">
+                Higiene que se vê, conforto que se sente
+            </h1>
+
+            <!-- Filete editorial sob o título -->
+            <div aria-hidden="true" class="reveal flex items-center justify-center gap-3 mt-7 mb-7" style="--reveal-delay:160ms">
+                <span class="h-px w-16 bg-[#9BD7F1]"></span>
+                <span class="block w-1.5 h-1.5 rotate-45 bg-[#2E69AF]"></span>
+                <span class="h-px w-16 bg-[#9BD7F1]"></span>
+            </div>
+
+            <p class="reveal text-base sm:text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed mb-8 sm:mb-9" style="--reveal-delay:240ms">
+                O cuidado que a sua casa merece. Excelência e sofisticação inigualáveis na higienização de tapetes, cortinas, edredons e estofados.
+            </p>
+
+            <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8" style="--reveal-delay:320ms">
+                <a href="https://wa.me/5511952613887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#2E69AF] text-white px-9 py-4 text-sm font-semibold tracking-[0.18em] uppercase inline-flex items-center justify-center gap-3 hover:bg-[#1f4879] transition-all shadow-lg shadow-[#2E69AF]/20">
+                    <i class="fab fa-whatsapp text-lg leading-none"></i> Solicitar Orçamento
+                </a>
+                <a href="#servicos" class="group inline-flex items-center justify-center gap-2 py-2 text-sm font-semibold tracking-[0.18em] uppercase text-[#2E69AF] border-b border-[#2E69AF]/40 hover:border-[#2E69AF] transition-all">
+                    Conhecer Serviços
+                    <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                </a>
+            </div>
+
+            <!-- Faixa de ancoragem: empilhada com ícones no mobile, em linha no desktop -->
+            <div class="reveal mt-8 sm:mt-10 pt-6 border-t border-slate-200/80" style="--reveal-delay:400ms">
+                <ul class="flex flex-col gap-3 sm:hidden text-xs tracking-[0.14em] uppercase text-slate-500">
+                    <li class="flex items-center justify-center gap-2.5">
+                        <i class="fa-solid fa-location-dot text-[#2E69AF] text-sm w-4 text-center" aria-hidden="true"></i>
+                        <span>Jardim Arujamérica</span>
+                    </li>
+                    <li class="flex items-center justify-center gap-2.5">
+                        <i class="fa-regular fa-clock text-[#2E69AF] text-sm w-4 text-center" aria-hidden="true"></i>
+                        <span>Seg a Sex · 8h às 17h</span>
+                    </li>
+                    <li class="flex items-center justify-center gap-2.5">
+                        <i class="fa-solid fa-truck-fast text-[#2E69AF] text-sm w-4 text-center" aria-hidden="true"></i>
+                        <span>Retirada às segundas</span>
+                    </li>
+                </ul>
+                <div class="hidden sm:flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs tracking-[0.18em] uppercase text-slate-500">
+                    <span>Jardim Arujamérica</span>
+                    <span aria-hidden="true" class="w-1 h-1 rounded-full bg-[#9BD7F1]"></span>
+                    <span>Seg a Sex · 8h às 17h</span>
+                    <span aria-hidden="true" class="w-1 h-1 rounded-full bg-[#9BD7F1]"></span>
+                    <span>Retirada às segundas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicos" class="py-24 px-6 lg:px-16 bg-white">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Header assimétrico: título à esquerda, parágrafo à direita -->
+            <div class="reveal mb-14 flex flex-col md:flex-row md:items-end gap-5 md:gap-12">
+                <div class="md:max-w-lg">
+                    <span class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-semibold text-[#2E69AF] mb-4">
+                        <span aria-hidden="true" class="h-px w-8 bg-[#2E69AF]/40"></span>
+                        O que higienizamos
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brandDark leading-tight">Nossos Serviços Especializados</h2>
+                </div>
+                <p class="reveal text-slate-500 text-sm font-light leading-relaxed md:ml-auto md:max-w-xs md:text-right" style="--reveal-delay:100ms">Tratamentos minuciosos desenvolvidos para preservar a integridade, o toque e a nobreza dos tecidos do seu lar.</p>
+            </div>
+
+            <!-- Layout assimétrico: card featured (Tapetes) + lista hairline dos demais -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
+
+                <!-- Card featured — Tapetes (diferencial da rotativa, merece destaque) -->
+                <div class="reveal lg:col-span-2 bg-[#112233] text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between min-h-[340px] relative overflow-hidden group">
+                    <!-- Monograma decorativo de fundo -->
+                    <span aria-hidden="true" class="absolute -bottom-6 -right-4 font-serif font-bold text-[8rem] leading-none text-white/[0.05] select-none pointer-events-none">NS</span>
+                    <div>
+                        <div class="reveal-scale w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-[#9BD7F1] text-2xl mb-8 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="font-serif text-3xl font-bold text-white mb-3">Tapetes</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed font-light mb-6">Limpeza profunda com equipamento rotativo profissional específico para tapetes — raro na região. Remove ácaros, odores e resíduos encrustados sem agredir as fibras.</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="h-px w-5 bg-[#9BD7F1]/60"></span>
+                        <span class="text-[11px] uppercase font-semibold tracking-[0.18em] text-[#9BD7F1]">Tecnologia Rotativa</span>
+                    </div>
+                </div>
+
+                <!-- Lista hairline — os 3 outros serviços -->
+                <div class="lg:col-span-3 flex flex-col divide-y divide-slate-100">
+
+                    <!-- Cortinas -->
+                    <div class="reveal group flex items-start gap-5 py-7 hover:bg-slate-50/60 rounded-2xl px-4 -mx-4 transition-colors" style="--reveal-delay:100ms">
+                        <div class="reveal-scale w-12 h-12 rounded-xl bg-[#F4F7FA] flex items-center justify-center text-[#2E69AF] text-lg shrink-0 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors" style="--reveal-delay:100ms">
+                            <i class="fa-solid fa-window-maximize"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-baseline justify-between gap-3 mb-1.5">
+                                <h3 class="font-serif text-xl font-bold text-brandDark">Cortinas</h3>
+                                <span class="shrink-0 text-[10px] uppercase font-semibold tracking-wider text-[#1f4879] bg-[#9BD7F1]/20 px-2 py-0.5 rounded">Pé-Direito Duplo</span>
+                            </div>
+                            <p class="text-slate-500 text-sm font-light leading-relaxed">Higienização completa que deixa as cortinas leves, macias e impecáveis — incluindo atendimento especializado a cortinas de pé-direito duplo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Edredons -->
+                    <div class="reveal group flex items-start gap-5 py-7 hover:bg-slate-50/60 rounded-2xl px-4 -mx-4 transition-colors" style="--reveal-delay:200ms">
+                        <div class="reveal-scale w-12 h-12 rounded-xl bg-[#F4F7FA] flex items-center justify-center text-[#2E69AF] text-lg shrink-0 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors" style="--reveal-delay:200ms">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-baseline justify-between gap-3 mb-1.5">
+                                <h3 class="font-serif text-xl font-bold text-brandDark">Edredons e Cobertores</h3>
+                                <span class="shrink-0 text-[10px] uppercase font-semibold tracking-wider text-[#1f4879] bg-[#9BD7F1]/20 px-2 py-0.5 rounded">Cuidado Delicado</span>
+                            </div>
+                            <p class="text-slate-500 text-sm font-light leading-relaxed">Lavagem especializada de alto padrão que garante frescor prolongado, leveza absoluta e bem-estar incomparável para suas noites.</p>
+                        </div>
+                    </div>
+
+                    <!-- Estofados -->
+                    <div class="reveal group flex items-start gap-5 py-7 hover:bg-slate-50/60 rounded-2xl px-4 -mx-4 transition-colors" style="--reveal-delay:300ms">
+                        <div class="reveal-scale w-12 h-12 rounded-xl bg-[#F4F7FA] flex items-center justify-center text-[#2E69AF] text-lg shrink-0 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors" style="--reveal-delay:300ms">
+                            <i class="fa-solid fa-couch"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-baseline justify-between gap-3 mb-1.5">
+                                <h3 class="font-serif text-xl font-bold text-brandDark">Estofados</h3>
+                                <span class="shrink-0 text-[10px] uppercase font-semibold tracking-wider text-[#1f4879] bg-[#9BD7F1]/20 px-2 py-0.5 rounded">No local</span>
+                            </div>
+                            <p class="text-slate-500 text-sm font-light leading-relaxed">Higienização profunda de sofás e poltronas realizada com total comodidade no conforto da sua residência, sem precisar transportar nada.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Luz que percorre o trilho do processo (sutil, paleta do site) */
+        .timeline-light {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 9999px;
+            background: #FFFFFF;
+            box-shadow: 0 0 6px 2px rgba(155,215,241,.95), 0 0 12px 5px rgba(46,105,175,.30);
+            opacity: 0;
+            will-change: top, left, opacity;
+            pointer-events: none;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, -50%);
+            animation: ns-light-drop 6s linear infinite;
+        }
+        @keyframes ns-light-drop {
+            0% { top: 0; opacity: 0; }
+            6% { opacity: 1; }
+            94% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        /* Brilho sutil nos círculos quando a luz passa (sequência sincronizada) */
+        .step-node { animation: ns-node-glow 6s ease-in-out infinite; will-change: filter; }
+        .ns-delay-1 { animation-delay: 0s; }
+        .ns-delay-2 { animation-delay: 1.5s; }
+        .ns-delay-3 { animation-delay: 3s; }
+        .ns-delay-4 { animation-delay: 4.5s; }
+        @keyframes ns-node-glow {
+            0%, 100% { filter: none; }
+            4% { filter: brightness(1.1) drop-shadow(0 0 7px rgba(155,215,241,.95)); }
+            12% { filter: none; }
+        }
+        @media (min-width: 1024px) {
+            .timeline-light {
+                left: 0;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                animation-name: ns-light-slide;
+            }
+            @keyframes ns-light-slide {
+                0% { left: 0; opacity: 0; }
+                6% { opacity: 1; }
+                94% { opacity: 1; }
+                100% { left: 100%; opacity: 0; }
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .timeline-light, .step-node, .ns-disc-rotor { animation: none !important; }
+            .reveal, .reveal-scale {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: opacity .2s ease-out !important;
+            }
+        }
+
+        /* Giro contínuo do disco de cerdas do equipamento rotativo */
+        .ns-disc-rotor {
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: ns-spin 16s linear infinite;
+        }
+        @keyframes ns-spin { to { transform: rotate(360deg); } }
+
+        /* Scroll reveal elegante: fade + subida suave, uma única vez */
+        .reveal, .reveal-scale {
+            opacity: 0;
+            transition: opacity 650ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition-delay: var(--reveal-delay, 0ms);
+            will-change: opacity, transform;
+        }
+        .reveal { transform: translateY(18px); }
+        .reveal-scale { transform: translateY(12px) scale(.93); }
+        .reveal.revealed, .reveal-scale.revealed { opacity: 1; transform: none; }
+    </style>
+
+    <!-- HOW IT WORKS -->
+    <section id="processo" class="py-24 px-6 lg:px-16 bg-[#F4F7FA] border-y border-slate-200/60">
+        <div class="max-w-7xl mx-auto">
+            <div class="reveal text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#2E69AF] mb-2 block">Metodologia Simples</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brandDark mb-4">Como Funciona o Processo</h2>
+                <p class="text-slate-600 text-base font-light">Um fluxo planejado para garantir máxima comodidade e respeito à sua rotina.</p>
+            </div>
+
+            <div class="relative max-w-3xl lg:max-w-6xl mx-auto">
+                <!-- Trilho da sequência: vertical no mobile, horizontal no desktop -->
+                <div aria-hidden="true" class="absolute left-[27px] sm:left-[31px] lg:left-[12%] lg:right-[12%] top-4 bottom-4 lg:top-[28px] lg:bottom-auto w-px lg:w-auto lg:h-px bg-[#9BD7F1]">
+                    <span class="timeline-light"></span>
+                </div>
+
+                <ol class="relative flex flex-col lg:grid lg:grid-cols-4 gap-10 lg:gap-8">
+                    <!-- Passo 1 -->
+                    <li class="reveal relative flex lg:flex-col lg:items-center lg:text-center gap-5 pl-16 sm:pl-20 lg:pl-0">
+                        <div class="reveal-scale step-node ns-delay-1 absolute left-0 top-0 lg:static w-14 h-14 sm:w-16 sm:h-16 lg:w-14 lg:h-14 rounded-full bg-[#2E69AF] text-white font-sans font-semibold text-base tracking-wider leading-none tabular-nums flex items-center justify-center shrink-0 ring-8 ring-[#F4F7FA] z-10">01</div>
+                        <div class="lg:mt-6">
+                            <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#2E69AF] block mb-1">Passo 1</span>
+                            <h3 class="font-serif text-xl font-bold text-brandDark mb-2">Orçamento pelo WhatsApp</h3>
+                            <p class="text-slate-600 text-sm font-light leading-relaxed">O cliente solicita o orçamento de forma rápida e prática diretamente pelo nosso canal de atendimento.</p>
+                        </div>
+                    </li>
+                    <!-- Passo 2 -->
+                    <li class="reveal relative flex lg:flex-col lg:items-center lg:text-center gap-5 pl-16 sm:pl-20 lg:pl-0" style="--reveal-delay:120ms">
+                        <div class="reveal-scale step-node ns-delay-2 absolute left-0 top-0 lg:static w-14 h-14 sm:w-16 sm:h-16 lg:w-14 lg:h-14 rounded-full bg-[#2E69AF] text-white font-sans font-semibold text-base tracking-wider leading-none tabular-nums flex items-center justify-center shrink-0 ring-8 ring-[#F4F7FA] z-10" style="--reveal-delay:120ms">02</div>
+                        <div class="lg:mt-6">
+                            <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#2E69AF] block mb-1">Passo 2</span>
+                            <h3 class="font-serif text-xl font-bold text-brandDark mb-2">Retirada na Segunda-feira</h3>
+                            <p class="text-slate-600 text-sm font-light leading-relaxed">Realizamos a retirada das peças organizadamente na segunda-feira, no decorrer do dia.</p>
+                        </div>
+                    </li>
+                    <!-- Passo 3 -->
+                    <li class="reveal relative flex lg:flex-col lg:items-center lg:text-center gap-5 pl-16 sm:pl-20 lg:pl-0" style="--reveal-delay:240ms">
+                        <div class="reveal-scale step-node ns-delay-3 absolute left-0 top-0 lg:static w-14 h-14 sm:w-16 sm:h-16 lg:w-14 lg:h-14 rounded-full bg-[#2E69AF] text-white font-sans font-semibold text-base tracking-wider leading-none tabular-nums flex items-center justify-center shrink-0 ring-8 ring-[#F4F7FA] z-10" style="--reveal-delay:240ms">03</div>
+                        <div class="lg:mt-6">
+                            <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#2E69AF] block mb-1">Passo 3</span>
+                            <h3 class="font-serif text-xl font-bold text-brandDark mb-2">Higienização Especializada</h3>
+                            <p class="text-slate-600 text-sm font-light leading-relaxed">Processo avançado com produtos biodegradáveis de alta performance e tecnologia de secagem rápida.</p>
+                        </div>
+                    </li>
+                    <!-- Passo 4 -->
+                    <li class="reveal relative flex lg:flex-col lg:items-center lg:text-center gap-5 pl-16 sm:pl-20 lg:pl-0" style="--reveal-delay:360ms">
+                        <div class="reveal-scale step-node ns-delay-4 absolute left-0 top-0 lg:static w-14 h-14 sm:w-16 sm:h-16 lg:w-14 lg:h-14 rounded-full bg-white text-[#2E69AF] border-2 border-[#2E69AF] font-sans font-semibold text-base tracking-wider leading-none tabular-nums flex items-center justify-center shrink-0 ring-8 ring-[#F4F7FA] z-10" style="--reveal-delay:360ms">04</div>
+                        <div class="lg:mt-6">
+                            <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#2E69AF] block mb-1">Passo 4</span>
+                            <h3 class="font-serif text-xl font-bold text-brandDark mb-2">Entrega Impecável</h3>
+                            <p class="text-slate-600 text-sm font-light leading-relaxed">Devolução das peças limpas, macias, perfumadas e prontas para revitalizar o seu ambiente.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRATEGIC HIGHLIGHT SECTION -->
+    <section class="py-24 px-6 lg:px-16 bg-gradient-to-br from-[#2E69AF] to-[#1f4879] text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="reveal flex items-center justify-center gap-3 mb-6">
+                <span aria-hidden="true" class="h-px w-10 bg-[#9BD7F1]/60"></span>
+                <span class="text-xs font-semibold tracking-[0.25em] uppercase text-[#9BD7F1]">Padrão de Excelência NS</span>
+                <span aria-hidden="true" class="h-px w-10 bg-[#9BD7F1]/60"></span>
+            </div>
+            <h2 class="reveal font-serif text-3xl sm:text-5xl font-bold mb-6 leading-tight" style="--reveal-delay:100ms">
+                Protegendo o investimento e a sofisticação do seu patrimônio têxtil
+            </h2>
+            <p class="reveal text-slate-100/90 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto mb-10" style="--reveal-delay:200ms">
+                Residências de alto padrão exigem rigor técnico absoluto. Unimos inovação em maquinário industrial e sensibilidade artesanal para entregar um resultado visivelmente superior em Arujá.
+            </p>
+            <a href="https://wa.me/5511952613887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="reveal inline-flex items-center gap-3 bg-[#9BD7F1] text-[#112233] px-8 py-4 rounded-full font-medium text-sm tracking-wider uppercase hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white transition-all shadow-xl" style="--reveal-delay:300ms">
+                <i class="fab fa-whatsapp text-lg"></i> Falar com Especialista
+            </a>
+        </div>
+    </section>
+
+    <!-- EXCLUSIVE DIFFERENTIATORS -->
+    <section id="diferenciais" class="py-24 px-6 lg:px-16 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <!-- Cabeçalho editorial alinhado à esquerda, quebrando o padrão centralizado das demais seções -->
+            <div class="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end gap-6 md:gap-10">
+                <div class="reveal max-w-xl">
+                    <span class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-semibold text-[#2E69AF] mb-5">
+                        <span aria-hidden="true" class="h-px w-10 bg-[#2E69AF]/40"></span>
+                        Exclusividade e Tecnologia
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brandDark">Diferenciais Exclusivos</h2>
+                </div>
+                <p class="reveal text-slate-600 text-base font-light leading-relaxed md:max-w-xs md:ml-auto md:text-right" style="--reveal-delay:120ms">Os pilares que tornam o nosso serviço único na região para atender às mais altas exigências.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 border-t border-slate-200 pt-12 md:pt-16">
+                <!-- Diff 1 -->
+                <div class="reveal">
+                    <!-- Ilustração: disco rotativo de lavagem de tapetes -->
+                    <svg viewBox="0 0 96 96" fill="none" aria-hidden="true" role="presentation" class="reveal-scale w-20 h-20 sm:w-24 sm:h-24 mb-8 text-[#2E69AF]">
+                        <circle cx="48" cy="48" r="34" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="48" cy="48" r="11" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="48" cy="48" r="3.5" fill="#9BD7F1"/>
+                        <g class="ns-disc-rotor">
+                            <circle cx="48" cy="48" r="23" stroke="#9BD7F1" stroke-width="8" stroke-dasharray="2 5.23" stroke-linecap="round"/>
+                        </g>
+                        <path d="M40.97 8.11 A40.5 40.5 0 0 1 68.25 12.93" stroke="#9BD7F1" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M55.03 87.89 A40.5 40.5 0 0 1 27.75 83.07" stroke="#9BD7F1" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-brandDark mb-4">Equipamento Rotativo Profissional para Tapetes</h3>
+                    <p class="text-slate-600 text-base leading-relaxed font-light">
+                        Dispomos de um equipamento rotativo profissional específico para lavagem de tapetes. É uma tecnologia avançada e extremamente rara na região. Esse sistema realiza uma limpeza mecânica profunda nas fibras mais densas sem agredir a estrutura do tecido, garantindo remoção total de resíduos encrustados e preservação máxima do toque original.
+                    </p>
+                </div>
+
+                <!-- Diff 2 -->
+                <div class="reveal" style="--reveal-delay:120ms">
+                    <!-- Ilustração: cortina de pé-direito duplo com figura humana em escala -->
+                    <svg viewBox="0 0 120 100" fill="none" aria-hidden="true" role="presentation" class="reveal-scale h-20 sm:h-24 w-auto mb-8 text-[#2E69AF]" style="--reveal-delay:200ms">
+                        <path d="M18 22 H66" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        <circle cx="18" cy="22" r="2.4" fill="#9BD7F1"/>
+                        <circle cx="66" cy="22" r="2.4" fill="#9BD7F1"/>
+                        <path d="M24 25 C22 36, 26 46, 23 56 C21 64, 25 74, 23.5 84" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M31.5 25 C33.5 36, 29.5 46, 32.5 56 C34.5 64, 30.5 74, 32 84" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M39 25 C37 36, 41 46, 38 56 C36 64, 40 74, 38.5 84" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M46.5 25 C48.5 36, 44.5 46, 47.5 56 C49.5 64, 45.5 74, 47 84" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M54 25 C52 36, 56 46, 53 56 C51 64, 55 74, 53.5 84" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M61.5 25 C63.5 36, 59.5 46, 62.5 56 C64.5 64, 60.5 74, 62 84" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="94" cy="61" r="4.5" fill="#9BD7F1"/>
+                        <path d="M94 66 L94 77.5 M94 68 L88.5 74 M94 68 L99.5 74 M94 77.5 L89.5 86 M94 77.5 L98.5 86" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M8 86 H112" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-brandDark mb-4">Atendimento a Cortinas de Pé-Direito Duplo</h3>
+                    <p class="text-slate-600 text-base leading-relaxed font-light">
+                        Cortinas imponentes de pé-direito duplo exigem estrutura física dedicada, manuseio altamente técnico e cuidado redobrado devido às grandes dimensões e peso. Oferecemos um atendimento especializado para essa categoria arquitetônica, assegurando higienização impecável e caimento perfeito no retorno ao seu ambiente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         MÁQUINA ROTATIVA — VÍDEOS
+    ════════════════════════════════════════════════════════════ -->
+    <style>
+        /* ── Carrossel track ── */
+        #rotativa-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            will-change: transform;
+        }
+
+        /* ── Card de vídeo ── */
+        .rv-card {
+            position: relative;
+            width: 280px;
+            flex-shrink: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #0f1c2e;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            transition: transform 0.28s ease, box-shadow 0.28s ease;
+        }
+        @media (min-width: 640px) { .rv-card { width: 320px; } }
+        @media (min-width: 1024px) { .rv-card { width: 360px; } }
+
+        .rv-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 18px 48px rgba(46,105,175,0.25); }
+
+        .rv-card video {
+            width: 100%;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+        }
+
+        /* Overlay gradiente + play button */
+        .rv-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(17,34,51,0.80) 0%, rgba(17,34,51,0.10) 50%, transparent 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.25s;
+        }
+        .rv-card:hover .rv-overlay {
+            background: linear-gradient(to top, rgba(17,34,51,0.65) 0%, rgba(46,105,175,0.12) 50%, transparent 100%);
+        }
+
+        .rv-play {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.92);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.30);
+            transition: transform 0.22s, background 0.22s;
+        }
+        .rv-card:hover .rv-play { transform: scale(1.12); background: #fff; }
+
+        .rv-play svg { width: 22px; height: 22px; fill: #2E69AF; margin-left: 3px; }
+
+        .rv-label {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+        }
+
+        /* ── Pause-on-hover via JS — classe helper ── */
+        #rotativa-viewport:hover #rotativa-track { animation-play-state: paused; }
+
+        /* ── Scrollbar hidden ── */
+        #rotativa-viewport { scrollbar-width: none; }
+        #rotativa-viewport::-webkit-scrollbar { display: none; }
+
+        /* ── Modal ── */
+        #rv-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(10,18,30,0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        #rv-modal.open { display: flex; }
+        #rv-modal video {
+            max-width: min(420px, 92vw);
+            max-height: 88svh;
+            border-radius: 16px;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+        }
+        #rv-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: #fff;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #rv-modal-close:hover { background: rgba(255,255,255,0.22); }
+
+        /* ── Nav arrows ── */
+        .rv-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #fff;
+            border: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #2E69AF;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .rv-arrow:hover { background: #2E69AF; color: #fff; transform: translateY(-50%) scale(1.08); }
+        #rv-prev { left: 8px; }
+        #rv-next { right: 8px; }
+        @media (min-width: 768px) { #rv-prev { left: -22px; } #rv-next { right: -22px; } }
+    </style>
+
+    <section id="maquina-rotativa" class="py-24 px-0 bg-[#F4F7FA] border-t border-slate-200/60 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-16">
+            <!-- Header -->
+            <div class="reveal text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs uppercase tracking-[0.22em] font-semibold text-[#2E69AF] mb-3 block">Tecnologia Exclusiva</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brandDark mb-5">
+                    Veja nossa máquina rotativa<br class="hidden sm:block"> em ação.
+                </h2>
+                <!-- Filete editorial -->
+                <div aria-hidden="true" class="flex items-center justify-center gap-3 mb-5">
+                    <span class="h-px w-12 bg-[#9BD7F1]"></span>
+                    <span class="block w-1.5 h-1.5 rotate-45 bg-[#2E69AF]"></span>
+                    <span class="h-px w-12 bg-[#9BD7F1]"></span>
+                </div>
+                <p class="text-slate-600 text-base font-light leading-relaxed">
+                    Somos uma das únicas lavanderias da região que possuem esse equipamento.<br>
+                    <span class="text-[#2E69AF] font-medium">Toque em qualquer vídeo para assistir.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Carrossel — full width sem padding lateral -->
+        <div class="relative px-6 lg:px-16 max-w-7xl mx-auto">
+            <!-- Sombra fade lateral esquerda -->
+            <div aria-hidden="true" class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-20 z-10 bg-gradient-to-r from-[#F4F7FA] to-transparent"></div>
+            <!-- Sombra fade lateral direita -->
+            <div aria-hidden="true" class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-20 z-10 bg-gradient-to-l from-[#F4F7FA] to-transparent"></div>
+
+            <!-- Arrow prev -->
+            <button id="rv-prev" class="rv-arrow" aria-label="Anterior">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+
+            <!-- Viewport -->
+            <div id="rotativa-viewport" class="overflow-x-auto py-4 cursor-grab active:cursor-grabbing select-none">
+                <div id="rotativa-track">
+                    <!-- Cards gerados via JS abaixo -->
+                </div>
+            </div>
+
+            <!-- Arrow next -->
+            <button id="rv-next" class="rv-arrow" aria-label="Próximo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+
+        <!-- Dots indicators -->
+        <div id="rv-dots" class="flex items-center justify-center gap-2 mt-8"></div>
+    </section>
+
+    <!-- Modal de vídeo -->
+    <div id="rv-modal" role="dialog" aria-modal="true" aria-label="Assistir vídeo">
+        <button id="rv-modal-close" aria-label="Fechar vídeo">&times;</button>
+        <video id="rv-modal-video" controls playsinline></video>
+    </div>
+
+    <script>
+    (function () {
+        /* ─── Dados dos vídeos ─── */
+        var videos = [
+            { src: 'depoimentos/video2.mp4', label: 'Máquina Rotativa #1' },
+            { src: 'depoimentos/video3.mp4', label: 'Máquina Rotativa #2' },
+            { src: 'depoimentos/video4.mp4', label: 'Máquina Rotativa #3' },
+            { src: 'depoimentos/video5.mp4', label: 'Máquina Rotativa #4' },
+            { src: 'depoimentos/video6.mp4', label: 'Máquina Rotativa #5' },
+            { src: 'depoimentos/video7.mp4', label: 'Máquina Rotativa #6' },
+        ];
+
+        var track     = document.getElementById('rotativa-track');
+        var viewport  = document.getElementById('rotativa-viewport');
+        var dotsEl    = document.getElementById('rv-dots');
+        var modal     = document.getElementById('rv-modal');
+        var modalVid  = document.getElementById('rv-modal-video');
+        var btnClose  = document.getElementById('rv-modal-close');
+        var btnPrev   = document.getElementById('rv-prev');
+        var btnNext   = document.getElementById('rv-next');
+
+        /* ─── Criar cards ─── */
+        videos.forEach(function (v, i) {
+            var card = document.createElement('div');
+            card.className = 'rv-card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-label', 'Assistir ' + v.label);
+            card.dataset.src = v.src;
+
+            var vid = document.createElement('video');
+            vid.src = v.src;
+            vid.muted = true;
+            vid.loop = true;
+            vid.playsInline = true;
+            vid.preload = 'metadata';
+            vid.setAttribute('aria-hidden', 'true');
+
+            var overlay = document.createElement('div');
+            overlay.className = 'rv-overlay';
+
+            var playBtn = document.createElement('div');
+            playBtn.className = 'rv-play';
+            playBtn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+
+            var label = document.createElement('div');
+            label.className = 'rv-label';
+            label.textContent = v.label;
+
+            overlay.appendChild(playBtn);
+            card.appendChild(vid);
+            card.appendChild(overlay);
+            card.appendChild(label);
+            track.appendChild(card);
+
+            /* Preview hover */
+            card.addEventListener('mouseenter', function () { vid.play().catch(function(){}); });
+            card.addEventListener('mouseleave', function () { vid.pause(); });
+
+            /* Abrir modal */
+            function openModal() {
+                modalVid.src = v.src;
+                modal.classList.add('open');
+                modalVid.play().catch(function(){});
+                document.body.style.overflow = 'hidden';
+            }
+            card.addEventListener('click', openModal);
+            card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
+        });
+
+        /* ─── Dots ─── */
+        var dots = [];
+        videos.forEach(function (_, i) {
+            var d = document.createElement('button');
+            d.className = 'w-2 h-2 rounded-full bg-slate-300 transition-all duration-300';
+            d.setAttribute('aria-label', 'Ir para vídeo ' + (i + 1));
+            d.addEventListener('click', function () { scrollToCard(i); });
+            dotsEl.appendChild(d);
+            dots.push(d);
+        });
+
+        function updateDots(idx) {
+            dots.forEach(function (d, i) {
+                d.className = i === idx
+                    ? 'w-5 h-2 rounded-full bg-[#2E69AF] transition-all duration-300'
+                    : 'w-2 h-2 rounded-full bg-slate-300 transition-all duration-300';
+            });
+        }
+        updateDots(0);
+
+        /* ─── Largura do card + gap ─── */
+        function cardWidth() {
+            var cards = track.querySelectorAll('.rv-card');
+            if (!cards.length) return 300;
+            return cards[0].offsetWidth + 20; /* width + gap */
+        }
+
+        /* ─── Índice ativo ─── */
+        function activeIndex() {
+            return Math.round(viewport.scrollLeft / cardWidth());
+        }
+
+        /* ─── Scroll para card ─── */
+        function scrollToCard(idx) {
+            var max = videos.length - 1;
+            idx = Math.max(0, Math.min(idx, max));
+            viewport.scrollTo({ left: idx * cardWidth(), behavior: 'smooth' });
+            updateDots(idx);
+        }
+
+        /* ─── Arrows ─── */
+        btnPrev.addEventListener('click', function () { scrollToCard(activeIndex() - 1); });
+        btnNext.addEventListener('click', function () { scrollToCard(activeIndex() + 1); });
+
+        /* ─── Dots sync ao scroll ─── */
+        var scrollTimer;
+        viewport.addEventListener('scroll', function () {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(function () { updateDots(activeIndex()); }, 80);
+        }, { passive: true });
+
+        /* ─── Drag to scroll (mouse) ─── */
+        var isDragging = false, startX, startScroll;
+        viewport.addEventListener('mousedown', function (e) {
+            isDragging = true; startX = e.pageX; startScroll = viewport.scrollLeft;
+            viewport.style.userSelect = 'none';
+        });
+        document.addEventListener('mousemove', function (e) {
+            if (!isDragging) return;
+            viewport.scrollLeft = startScroll - (e.pageX - startX);
+        });
+        document.addEventListener('mouseup', function () {
+            if (!isDragging) return;
+            isDragging = false;
+            viewport.style.userSelect = '';
+            /* Snap ao card mais próximo */
+            scrollToCard(activeIndex());
+        });
+
+        /* ─── Auto-scroll suave ─── */
+        var autoInterval;
+        var paused = false;
+
+        function startAuto() {
+            clearInterval(autoInterval);
+            autoInterval = setInterval(function () {
+                if (paused) return;
+                var next = activeIndex() + 1;
+                if (next >= videos.length) next = 0;
+                scrollToCard(next);
+            }, 3200);
+        }
+        startAuto();
+
+        /* Pausa quando hover */
+        viewport.addEventListener('mouseenter', function () { paused = true; });
+        viewport.addEventListener('mouseleave', function () { paused = false; });
+
+        /* Pausa quando modal aberto */
+        function pauseAuto() { paused = true; }
+        function resumeAuto() { paused = false; }
+
+        /* ─── Modal ─── */
+        function closeModal() {
+            modalVid.pause();
+            modalVid.src = '';
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+            resumeAuto();
+        }
+        btnClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+    })();
+    </script>
+    <!-- ═══════════════════════════════════════════════════════
+         CORTINAS DE PÉ-DIREITO — VÍDEOS
+    ════════════════════════════════════════════════════════════ -->
+    <style>
+        /* Cortinas carousel — reutiliza classes rv-* com prefixo ct- para evitar conflito */
+        #ct-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+        }
+        .ct-card {
+            position: relative;
+            width: 280px;
+            flex-shrink: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #0f1c2e;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            transition: transform 0.28s ease, box-shadow 0.28s ease;
+        }
+        @media (min-width: 640px) { .ct-card { width: 320px; } }
+        @media (min-width: 1024px) { .ct-card { width: 360px; } }
+        .ct-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 18px 48px rgba(46,105,175,0.25); }
+        .ct-card video {
+            width: 100%;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+        }
+        .ct-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(17,34,51,0.80) 0%, rgba(17,34,51,0.10) 50%, transparent 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.25s;
+        }
+        .ct-card:hover .ct-overlay {
+            background: linear-gradient(to top, rgba(17,34,51,0.65) 0%, rgba(46,105,175,0.12) 50%, transparent 100%);
+        }
+        .ct-play {
+            width: 60px; height: 60px; border-radius: 50%;
+            background: rgba(255,255,255,0.92);
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.30);
+            transition: transform 0.22s, background 0.22s;
+        }
+        .ct-card:hover .ct-play { transform: scale(1.12); background: #fff; }
+        .ct-play svg { width: 22px; height: 22px; fill: #2E69AF; margin-left: 3px; }
+        .ct-label {
+            position: absolute; bottom: 16px; left: 16px; right: 16px;
+            color: #fff; font-size: 12px; font-weight: 600;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+        }
+        #ct-viewport { scrollbar-width: none; }
+        #ct-viewport::-webkit-scrollbar { display: none; }
+        #ct-modal {
+            position: fixed; inset: 0; z-index: 9999;
+            background: rgba(10,18,30,0.95);
+            display: none; align-items: center; justify-content: center; padding: 20px;
+        }
+        #ct-modal.open { display: flex; }
+        #ct-modal video {
+            max-width: min(420px, 92vw); max-height: 88svh;
+            border-radius: 16px; box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+        }
+        #ct-modal-close {
+            position: absolute; top: 20px; right: 20px;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18);
+            color: #fff; font-size: 20px; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: background 0.2s;
+        }
+        #ct-modal-close:hover { background: rgba(255,255,255,0.22); }
+        .ct-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            z-index: 10; width: 44px; height: 44px; border-radius: 50%;
+            background: #fff; border: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; color: #2E69AF; transition: background 0.2s, transform 0.2s;
+        }
+        .ct-arrow:hover { background: #2E69AF; color: #fff; transform: translateY(-50%) scale(1.08); }
+        #ct-prev { left: 8px; }
+        #ct-next { right: 8px; }
+        @media (min-width: 768px) { #ct-prev { left: -22px; } #ct-next { right: -22px; } }
+    </style>
+
+    <section id="cortinas-pe-direito" class="py-24 px-0 bg-white border-t border-slate-200/60 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-16">
+            <!-- Header -->
+            <div class="reveal text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs uppercase tracking-[0.22em] font-semibold text-[#2E69AF] mb-3 block">Serviço Especializado</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brandDark mb-5">
+                    Cortinas de pé-direito<br class="hidden sm:block"> como nunca antes.
+                </h2>
+                <div aria-hidden="true" class="flex items-center justify-center gap-3 mb-5">
+                    <span class="h-px w-12 bg-[#9BD7F1]"></span>
+                    <span class="block w-1.5 h-1.5 rotate-45 bg-[#2E69AF]"></span>
+                    <span class="h-px w-12 bg-[#9BD7F1]"></span>
+                </div>
+                <p class="text-slate-600 text-base font-light leading-relaxed">
+                    Atendimento exclusivo para cortinas de pé-direito duplo — grandes dimensões,<br class="hidden sm:block"> manuseio técnico e cuidado redobrado em cada detalhe.<br>
+                    <span class="text-[#2E69AF] font-medium">Toque em qualquer vídeo para assistir.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Carrossel -->
+        <div class="relative px-6 lg:px-16 max-w-7xl mx-auto">
+            <div aria-hidden="true" class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-20 z-10 bg-gradient-to-r from-white to-transparent"></div>
+            <div aria-hidden="true" class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-20 z-10 bg-gradient-to-l from-white to-transparent"></div>
+
+            <button id="ct-prev" class="ct-arrow" aria-label="Anterior">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+
+            <div id="ct-viewport" class="overflow-x-auto py-4 cursor-grab active:cursor-grabbing select-none">
+                <div id="ct-track"></div>
+            </div>
+
+            <button id="ct-next" class="ct-arrow" aria-label="Próximo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+
+        <div id="ct-dots" class="flex items-center justify-center gap-2 mt-8"></div>
+    </section>
+
+    <!-- Modal cortinas -->
+    <div id="ct-modal" role="dialog" aria-modal="true" aria-label="Assistir vídeo de cortinas">
+        <button id="ct-modal-close" aria-label="Fechar vídeo">&times;</button>
+        <video id="ct-modal-video" controls playsinline></video>
+    </div>
+
+    <script>
+    (function () {
+        var videos = [
+            { src: 'depoimentos 2/WhatsApp Video 2026-09-17 at 17.34.45.mp4', label: 'Cortinas #1' },
+            { src: 'depoimentos 2/WhatsApp Video 2026-09-1rtrt7 at 17.34.39.mp4', label: 'Cortinas #2' },
+            { src: 'depoimentos 2/rtrtrt.mp4', label: 'Cortinas #3' },
+            { src: 'depoimentos 2/t44wtw4t.mp4', label: 'Cortinas #4' },
+            { src: 'depoimentos 2/wtw4tw4t.mp4', label: 'Cortinas #5' },
+            { src: 'depoimentos 2/yukyuik.mp4', label: 'Cortinas #6' },
+        ];
+
+        var track    = document.getElementById('ct-track');
+        var viewport = document.getElementById('ct-viewport');
+        var dotsEl   = document.getElementById('ct-dots');
+        var modal    = document.getElementById('ct-modal');
+        var modalVid = document.getElementById('ct-modal-video');
+        var btnClose = document.getElementById('ct-modal-close');
+        var btnPrev  = document.getElementById('ct-prev');
+        var btnNext  = document.getElementById('ct-next');
+
+        videos.forEach(function (v) {
+            var card = document.createElement('div');
+            card.className = 'ct-card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-label', 'Assistir ' + v.label);
+
+            var vid = document.createElement('video');
+            vid.src = v.src;
+            vid.muted = true; vid.loop = true; vid.playsInline = true; vid.preload = 'metadata';
+            vid.setAttribute('aria-hidden', 'true');
+
+            var overlay = document.createElement('div'); overlay.className = 'ct-overlay';
+            var playBtn = document.createElement('div'); playBtn.className = 'ct-play';
+            playBtn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+            var label = document.createElement('div'); label.className = 'ct-label';
+            label.textContent = v.label;
+
+            overlay.appendChild(playBtn);
+            card.appendChild(vid); card.appendChild(overlay); card.appendChild(label);
+            track.appendChild(card);
+
+            card.addEventListener('mouseenter', function () { vid.play().catch(function(){}); });
+            card.addEventListener('mouseleave', function () { vid.pause(); });
+
+            function openModal() {
+                modalVid.src = v.src;
+                modal.classList.add('open');
+                modalVid.play().catch(function(){});
+                document.body.style.overflow = 'hidden';
+                paused = true;
+            }
+            card.addEventListener('click', openModal);
+            card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
+        });
+
+        var dots = [];
+        videos.forEach(function (_, i) {
+            var d = document.createElement('button');
+            d.className = 'w-2 h-2 rounded-full bg-slate-300 transition-all duration-300';
+            d.setAttribute('aria-label', 'Ir para vídeo ' + (i + 1));
+            d.addEventListener('click', function () { scrollToCard(i); });
+            dotsEl.appendChild(d); dots.push(d);
+        });
+
+        function updateDots(idx) {
+            dots.forEach(function (d, i) {
+                d.className = i === idx
+                    ? 'w-5 h-2 rounded-full bg-[#2E69AF] transition-all duration-300'
+                    : 'w-2 h-2 rounded-full bg-slate-300 transition-all duration-300';
+            });
+        }
+        updateDots(0);
+
+        function cardWidth() {
+            var cards = track.querySelectorAll('.ct-card');
+            return cards.length ? cards[0].offsetWidth + 20 : 300;
+        }
+        function activeIndex() { return Math.round(viewport.scrollLeft / cardWidth()); }
+        function scrollToCard(idx) {
+            idx = Math.max(0, Math.min(idx, videos.length - 1));
+            viewport.scrollTo({ left: idx * cardWidth(), behavior: 'smooth' });
+            updateDots(idx);
+        }
+
+        btnPrev.addEventListener('click', function () { scrollToCard(activeIndex() - 1); });
+        btnNext.addEventListener('click', function () { scrollToCard(activeIndex() + 1); });
+
+        var scrollTimer;
+        viewport.addEventListener('scroll', function () {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(function () { updateDots(activeIndex()); }, 80);
+        }, { passive: true });
+
+        var isDragging = false, startX, startScroll;
+        viewport.addEventListener('mousedown', function (e) {
+            isDragging = true; startX = e.pageX; startScroll = viewport.scrollLeft;
+            viewport.style.userSelect = 'none';
+        });
+        document.addEventListener('mousemove', function (e) {
+            if (!isDragging) return;
+            viewport.scrollLeft = startScroll - (e.pageX - startX);
+        });
+        document.addEventListener('mouseup', function () {
+            if (!isDragging) return;
+            isDragging = false; viewport.style.userSelect = '';
+            scrollToCard(activeIndex());
+        });
+
+        var paused = false;
+        var autoInterval = setInterval(function () {
+            if (paused) return;
+            var next = activeIndex() + 1;
+            if (next >= videos.length) next = 0;
+            scrollToCard(next);
+        }, 3400);
+
+        viewport.addEventListener('mouseenter', function () { paused = true; });
+        viewport.addEventListener('mouseleave', function () { paused = false; });
+
+        function closeModal() {
+            modalVid.pause(); modalVid.src = '';
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+            paused = false;
+        }
+        btnClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+    })();
+    </script>
+
+    <!-- HORÁRIOS DE ATENDIMENTO -->
+    <section id="horarios" class="py-24 px-6 lg:px-16 bg-[#F4F7FA] border-t border-slate-200/60">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header left-aligned: quebra o padrão centralizado das demais seções -->
+            <div class="reveal mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                <div>
+                    <span class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-semibold text-[#2E69AF] mb-3">
+                        <span aria-hidden="true" class="h-px w-7 bg-[#2E69AF]/40"></span>
+                        Quando nos encontrar
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brandDark">Horários de Atendimento</h2>
+                </div>
+                <p class="text-slate-500 text-sm font-light sm:text-right sm:max-w-[200px] leading-relaxed">Tapetes, Cortinas, Persianas e Edredons</p>
+            </div>
+
+            <div class="reveal bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden" style="--reveal-delay:120ms">
+                <div class="flex items-center justify-between gap-3 px-5 sm:px-10 py-5 bg-brandDark text-white">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <i class="fa-regular fa-clock text-[#9BD7F1] text-lg sm:text-xl shrink-0"></i>
+                        <span class="font-serif font-bold text-base sm:text-lg tracking-wide whitespace-nowrap truncate">Horários</span>
+                    </div>
+                    <span id="status-aberto" class="shrink-0 whitespace-nowrap text-[10px] sm:text-xs font-semibold tracking-wider uppercase px-2.5 sm:px-3 py-1.5 rounded-full bg-white/10 border border-white/20">...</span>
+                </div>
+
+                <ul class="divide-y divide-slate-100 text-sm sm:text-base">
+                    <li class="flex items-center justify-between gap-4 px-6 sm:px-10 py-4">
+                        <span class="font-medium text-slate-700 capitalize">domingo</span>
+                        <span class="font-semibold text-slate-400 uppercase tracking-wide text-xs sm:text-sm">Fechada</span>
+                    </li>
+                    <li class="flex items-center justify-between gap-4 px-6 sm:px-10 py-4 bg-slate-50/60">
+                        <span class="font-medium text-slate-700 capitalize">segunda-feira</span>
+                        <span class="text-right text-slate-600 font-light leading-relaxed">08:00 - 11:45<br>13:00 - 17:00</span>
+                    </li>
+                    <li class="flex items-center justify-between gap-4 px-6 sm:px-10 py-4">
+                        <span class="font-medium text-slate-700 capitalize">terça-feira</span>
+                        <span class="text-right text-slate-600 font-light leading-relaxed">08:00 - 11:45<br>13:00 - 17:00</span>
+                    </li>
+                    <li class="flex items-center justify-between gap-4 px-6 sm:px-10 py-4 bg-slate-50/60">
+                        <span class="font-medium text-slate-700 capitalize">quarta-feira</span>
+                        <span class="text-right text-slate-600 font-light leading-relaxed">08:00 - 11:45<br>13:00 - 17:00</span>
+                    </li>
+                    <li class="flex items-center justify-between gap-4 px-6 sm:px-10 py-4">
+                        <span class="font-medium text-slate-700 capitalize">quinta-feira</span>
+                        <span class="text-right text-slate-600 font-light leading-relaxed">08:00 - 11:45<br>13:00 - 17:00</span>
+                    </li>
+                    <li class="flex items-center justify-between gap-4 px-6 sm:px-10 py-4 bg-slate-50/60">
+                        <span class="font-medium text-slate-700 capitalize">sexta-feira</span>
+                        <span class="text-right text-slate-600 font-light leading-relaxed">08:00 - 11:45<br>13:00 - 17:00</span>
+                    </li>
+                    <li class="flex items-center justify-between gap-4 px-6 sm:px-10 py-4">
+                        <span class="font-medium text-slate-700 capitalize">sábado</span>
+                        <span class="font-semibold text-slate-400 uppercase tracking-wide text-xs sm:text-sm">Fechada</span>
+                    </li>
+                </ul>
+
+                <div class="flex items-center justify-center gap-2 px-6 py-5 border-t border-slate-100 text-slate-600 text-sm font-light">
+                    <i class="fa-solid fa-location-dot text-[#2E69AF]"></i>
+                    <span>Jardim Arujamérica, Arujá - SP, Brasil</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            function estaAbertoAgora(data) {
+                var agora = data || new Date();
+                var dia = agora.getDay(); // 0 = domingo, 6 = sábado
+                if (dia === 0 || dia === 6) return false;
+                var mins = agora.getHours() * 60 + agora.getMinutes();
+                var manha = mins >= (8 * 60) && mins < (11 * 60 + 45);
+                var tarde = mins >= (13 * 60) && mins < (17 * 60);
+                return manha || tarde;
+            }
+            var baseClass = 'shrink-0 whitespace-nowrap text-[10px] sm:text-xs font-semibold tracking-wider uppercase px-2.5 sm:px-3 py-1.5 rounded-full border ';
+            function atualizarBadge() {
+                var el = document.getElementById('status-aberto');
+                if (!el) return;
+                var aberto = estaAbertoAgora(new Date());
+                el.textContent = aberto ? 'Aberto agora' : 'Fechado agora';
+                el.className = baseClass + (aberto
+                    ? 'bg-emerald-400/20 text-emerald-200 border-emerald-300/30'
+                    : 'bg-red-400/10 text-red-200 border-red-300/20');
+            }
+            atualizarBadge();
+            // Atualiza em tempo real a cada 30 segundos
+            setInterval(atualizarBadge, 30000);
+        })();
+    </script>
+
+    <!-- NOSSA LOCALIZAÇÃO -->
+    <section id="localizacao" class="py-24 px-6 lg:px-16 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="reveal text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#2E69AF] mb-2 block">Onde nos encontrar</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brandDark mb-4">Nossa Localização</h2>
+                <p class="text-slate-600 text-base font-light leading-relaxed">
+                    Ficamos em uma esquina no Jardim Arujamérica, em Arujá/SP — por isso temos dois endereços que chegam ao mesmo ponto.
+                    Toque em qualquer um para abrir no Google Maps.
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto flex flex-col gap-6">
+                    <!-- Endereço 1 -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Muraca,+63,+Jardim+Arujamerica,+Aruja,+SP" target="_blank" rel="noopener noreferrer" class="reveal group bg-[#F4F7FA] border border-slate-100 rounded-3xl p-6 sm:p-7 transition-all duration-300 hover:shadow-xl hover:border-[#9BD7F1] hover:-translate-y-1 flex flex-col gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white shadow-sm flex items-center justify-center text-[#2E69AF] text-lg shrink-0 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span class="bg-[#2E69AF] text-white text-[10px] px-3 py-1.5 rounded-full font-semibold tracking-wider uppercase leading-tight">Endereço 1: Principal</span>
+                        </div>
+                        <p class="font-sans text-[15px] sm:text-base font-light text-slate-600 leading-relaxed">Rua Orlando Muraca, 63, Jardim Arujamérica, Arujá, São Paulo</p>
+                        <span class="flex sm:inline-flex self-stretch sm:self-start items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 px-5 py-3 rounded-full text-xs font-semibold tracking-wider uppercase group-hover:bg-[#2E69AF] group-hover:text-white group-hover:border-[#2E69AF] transition-all">
+                            <i class="fa-solid fa-map-location-dot text-sm"></i> Abrir no Google Maps
+                        </span>
+                    </a>
+
+                    <!-- Endereço 2 -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Gloria+Nasser,+63,+Jardim+Arujamerica,+Aruja,+SP" target="_blank" rel="noopener noreferrer" class="reveal group bg-[#F4F7FA] border border-slate-100 rounded-3xl p-6 sm:p-7 transition-all duration-300 hover:shadow-xl hover:border-[#9BD7F1] hover:-translate-y-1 flex flex-col gap-4" style="--reveal-delay:120ms">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white shadow-sm flex items-center justify-center text-[#2E69AF] text-lg shrink-0 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-signs-post"></i>
+                            </div>
+                            <span class="bg-[#9BD7F1]/40 text-[#1f4879] text-[10px] px-3 py-1.5 rounded-full font-semibold tracking-wider uppercase leading-tight">Endereço 2: Lado da Esquina</span>
+                        </div>
+                        <p class="font-sans text-[15px] sm:text-base font-light text-slate-600 leading-relaxed">Rua Glória Nasser, 63, Jardim Arujamérica, Arujá, São Paulo</p>
+                        <span class="flex sm:inline-flex self-stretch sm:self-start items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 px-5 py-3 rounded-full text-xs font-semibold tracking-wider uppercase group-hover:bg-[#2E69AF] group-hover:text-white group-hover:border-[#2E69AF] transition-all">
+                            <i class="fa-solid fa-map-location-dot text-sm"></i> Abrir no Google Maps
+                        </span>
+                    </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER / CONTACT -->
+    <footer class="bg-brandDark text-white pt-16 pb-10 px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-12">
+                <!-- Col 1: Marca -->
+                <div class="lg:col-span-7">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-[#9BD7F1] flex items-center justify-center text-[#2E69AF] font-serif font-bold text-base">
+                            NS
+                        </div>
+                        <span class="font-serif font-bold text-xl tracking-wider text-white">NS LAVANDERIA</span>
+                    </div>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed max-w-md mb-8">
+                        Higiene que se vê, conforto que se sente. O padrão definitivo de cuidado têxtil para residências de alto padrão em Arujá e região.
+                    </p>
+
+                </div>
+
+                <!-- Col 2: Contato direto -->
+                <div class="lg:col-span-5">
+                    <h4 class="font-serif text-lg font-bold text-[#9BD7F1] tracking-wide mb-4">Atendimento Direto</h4>
+                    <ul class="text-sm">
+                        <li class="flex items-center justify-between gap-4 py-4 border-t border-white/10">
+                            <span class="flex items-center gap-2.5 text-xs uppercase tracking-[0.18em] text-slate-400 font-medium">
+                                <i class="fab fa-whatsapp text-[#9BD7F1] text-base" aria-hidden="true"></i> WhatsApp
+                            </span>
+                            <a href="https://wa.me/5511952613887" target="_blank" rel="noopener noreferrer" class="font-light text-white hover:text-[#9BD7F1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#9BD7F1] transition-colors">(11) 95261-3887</a>
+                        </li>
+                        <li class="flex items-center justify-between gap-4 py-4 border-y border-white/10">
+                            <span class="flex items-center gap-2.5 text-xs uppercase tracking-[0.18em] text-slate-400 font-medium">
+                                <i class="fab fa-instagram text-[#9BD7F1] text-base" aria-hidden="true"></i> Instagram
+                            </span>
+                            <a href="https://instagram.com/nslavanderiadetapetes" target="_blank" rel="noopener noreferrer" class="font-light text-white hover:text-[#9BD7F1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#9BD7F1] transition-colors">@nslavanderiadetapetes</a>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511952613887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="mt-8 w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#2E69AF] text-white py-3.5 px-8 rounded-full text-xs font-semibold tracking-wider uppercase hover:bg-[#1f4879] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#9BD7F1] transition-all">
+                        <i class="fab fa-whatsapp text-base" aria-hidden="true"></i> Solicitar Atendimento
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center text-xs text-slate-500 font-light text-center">
+                <p>&copy; 2026 NS Lavanderia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal: fade + subida suave, executado uma única vez por elemento
+        (function () {
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var els = document.querySelectorAll('.reveal, .reveal-scale');
+
+            function mostrarImediatamente(el) { el.classList.add('revealed'); }
+
+            if (reduce || !('IntersectionObserver' in window)) {
+                els.forEach(mostrarImediatamente);
+                return;
+            }
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target); // anima só uma vez
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+            els.forEach(function (el) { observer.observe(el); });
+        })();
+    </script>
+
+</body>
+</html>

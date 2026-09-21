@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NS Lavanderia | Higienização de Alto Padrão em Arujá/SP</title>
+    <title>Lavanderia de tapetes | Higienização de Alto Padrão em Arujá/SP</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -39,12 +39,10 @@
     <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-[#9BD7F1]/30 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-3.5 sm:py-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
-                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#9BD7F1] flex items-center justify-center text-[#2E69AF] font-serif font-bold text-base sm:text-lg shadow-sm group-hover:scale-105 transition-transform">
-                    NS
-                </div>
+                <img src="assets/logo.png" alt="Logotipo NS Lavanderia" width="44" height="44" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover shadow-sm ring-1 ring-[#9BD7F1]/50 group-hover:scale-105 transition-transform">
                 <div class="flex flex-col">
-                    <span class="font-serif font-bold text-base sm:text-lg text-[#2E69AF] tracking-widest leading-none">NS</span>
-                    <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.2em] text-slate-500 mt-0.5 sm:mt-1">Lavanderia</span>
+                    <span class="font-serif text-base sm:text-lg text-[#2E69AF] leading-none tracking-wide">Lavanderia <strong class="font-bold">de tapetes</strong></span>
+                    <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.2em] text-slate-500 mt-0.5 sm:mt-1">Arujá · São Paulo</span>
                 </div>
             </a>
 
@@ -221,8 +219,69 @@
         })();
     </script>
 
+    <!-- ═══════════════════════════════════════════════════════
+         HERO — CARROSSEL DE FOTOS (mesmo padrão dos carrosséis
+         de vídeo rotativa/cortinas: classes prefixadas com hc-)
+    ════════════════════════════════════════════════════════════ -->
+    <style>
+        #hc-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            will-change: transform;
+        }
+        .hc-card {
+            position: relative;
+            width: 280px;
+            flex-shrink: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #0f1c2e;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            transition: transform 0.28s ease, box-shadow 0.28s ease;
+        }
+        @media (min-width: 640px) { .hc-card { width: 320px; } }
+        @media (min-width: 1024px) { .hc-card { width: 360px; } }
+
+        .hc-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 18px 48px rgba(46,105,175,0.25); }
+
+        .hc-card img {
+            width: 100%;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+        }
+
+        #hc-viewport { scrollbar-width: none; }
+        #hc-viewport::-webkit-scrollbar { display: none; }
+
+        .hc-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #fff;
+            border: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #2E69AF;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .hc-arrow:hover { background: #2E69AF; color: #fff; transform: translateY(-50%) scale(1.08); }
+        #hc-prev { left: 8px; }
+        #hc-next { right: 8px; }
+        @media (min-width: 768px) { #hc-prev { left: -22px; } #hc-next { right: -22px; } }
+    </style>
+
     <!-- HERO SECTION -->
-    <section class="relative flex items-center px-6 lg:px-16 pt-28 pb-10 sm:pt-32 sm:pb-14 min-h-[82svh] lg:min-h-[92vh] overflow-hidden bg-white">
+    <section class="relative flex flex-col items-center justify-center px-6 lg:px-16 pt-28 pb-10 sm:pt-32 sm:pb-14 min-h-[82svh] lg:min-h-[92vh] overflow-hidden bg-white">
         <!-- Fundo editorial: véu suave + trama vertical sutil (trama de tecido) + monograma -->
         <div aria-hidden="true" class="absolute inset-0 pointer-events-none">
             <div class="absolute inset-x-0 top-0 h-2/3 bg-gradient-to-b from-[#9BD7F1]/25 via-[#9BD7F1]/10 to-transparent"></div>
@@ -235,7 +294,7 @@
             <!-- Sobretítulo editorial com filetes, sem pílula -->
             <div class="reveal flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-7">
                 <span aria-hidden="true" class="h-px w-8 sm:w-16 bg-[#2E69AF]/40"></span>
-                <span class="text-[11px] sm:text-xs font-semibold tracking-[0.22em] sm:tracking-[0.3em] uppercase text-[#2E69AF]">NS Lavanderia · Arujá, São Paulo</span>
+                <span class="text-[11px] sm:text-xs font-semibold tracking-[0.22em] sm:tracking-[0.3em] uppercase text-[#2E69AF]">Lavanderia <strong class="font-extrabold">de tapetes</strong> · Arujá, São Paulo</span>
                 <span aria-hidden="true" class="h-px w-8 sm:w-16 bg-[#2E69AF]/40"></span>
             </div>
 
@@ -263,7 +322,37 @@
                     <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">&rarr;</span>
                 </a>
             </div>
+        </div>
 
+        <!-- Carrossel de fotos do trabalho (tapetes e máquinas) -->
+        <div class="reveal relative w-full max-w-6xl mx-auto mt-10 sm:mt-12 z-10" style="--reveal-delay:360ms">
+            <!-- Sombra fade lateral esquerda -->
+            <div aria-hidden="true" class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-20 z-10 bg-gradient-to-r from-white to-transparent"></div>
+            <!-- Sombra fade lateral direita -->
+            <div aria-hidden="true" class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-20 z-10 bg-gradient-to-l from-white to-transparent"></div>
+
+            <!-- Arrow prev -->
+            <button id="hc-prev" class="hc-arrow" aria-label="Foto anterior">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+
+            <!-- Viewport -->
+            <div id="hc-viewport" class="overflow-x-auto py-4 cursor-grab active:cursor-grabbing select-none" role="region" aria-label="Fotos do nosso trabalho">
+                <div id="hc-track">
+                    <!-- Cards gerados via JS abaixo -->
+                </div>
+            </div>
+
+            <!-- Arrow next -->
+            <button id="hc-next" class="hc-arrow" aria-label="Próxima foto">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+
+            <!-- Dots indicators -->
+            <div id="hc-dots" class="flex items-center justify-center gap-2 mt-6"></div>
+        </div>
+
+        <div class="relative max-w-3xl mx-auto text-center z-10 w-full">
             <!-- Faixa de ancoragem: empilhada com ícones no mobile, em linha no desktop -->
             <div class="reveal mt-8 sm:mt-10 pt-6 border-t border-slate-200/80" style="--reveal-delay:400ms">
                 <ul class="flex flex-col gap-3 sm:hidden text-xs tracking-[0.14em] uppercase text-slate-500">
@@ -277,7 +366,7 @@
                     </li>
                     <li class="flex items-center justify-center gap-2.5">
                         <i class="fa-solid fa-truck-fast text-[#2E69AF] text-sm w-4 text-center" aria-hidden="true"></i>
-                        <span>Retirada às segundas</span>
+                        <span>Retirada agendada</span>
                     </li>
                 </ul>
                 <div class="hidden sm:flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs tracking-[0.18em] uppercase text-slate-500">
@@ -285,11 +374,135 @@
                     <span aria-hidden="true" class="w-1 h-1 rounded-full bg-[#9BD7F1]"></span>
                     <span>Seg a Sex · 8h às 17h</span>
                     <span aria-hidden="true" class="w-1 h-1 rounded-full bg-[#9BD7F1]"></span>
-                    <span>Retirada às segundas</span>
+                    <span>Retirada agendada</span>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+    (function () {
+        /* ─── Fotos: mesma lógica dos carrosséis rotativa/cortinas ─── */
+        var photos = [
+            { src: 'carrossel hero/rthrth.jpeg', alt: 'Tapete estendido em equipamento de lavagem' },
+            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.34.17.jpeg', alt: 'Tapete enrolado entrando na centrífuga profissional' },
+            { src: 'carrossel hero/thrthtrhr.jpeg', alt: 'Máquina rotativa em ação sobre tapete com espuma' },
+            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.29.36.jpeg', alt: 'Limpeza profunda de tapete com máquina rotativa e espuma' },
+            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.34.18.jpeg', alt: 'Tapete acomodado na centrífuga profissional' },
+            { src: 'carrossel hero/thrhrthrth.jpeg', alt: 'Máquina rotativa higienizando tapete claro' },
+            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.29.37.jpeg', alt: 'Máquina rotativa removendo sujeira de tapete' },
+            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.34.19.jpeg', alt: 'Centrífuga profissional para higienização de tapetes' },
+            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.29.38.jpeg', alt: 'Higienização de tapete com máquina profissional' },
+        ];
+
+        var track    = document.getElementById('hc-track');
+        var viewport = document.getElementById('hc-viewport');
+        var dotsEl   = document.getElementById('hc-dots');
+        var btnPrev  = document.getElementById('hc-prev');
+        var btnNext  = document.getElementById('hc-next');
+
+        if (!track || !viewport) return;
+
+        /* ─── Criar cards ─── */
+        photos.forEach(function (p) {
+            var card = document.createElement('figure');
+            card.className = 'hc-card';
+
+            var img = document.createElement('img');
+            img.src = encodeURI(p.src);
+            img.alt = p.alt;
+            img.loading = 'lazy';
+            img.draggable = false;
+
+            card.appendChild(img);
+            track.appendChild(card);
+        });
+
+        /* ─── Dots ─── */
+        var dots = [];
+        photos.forEach(function (_, i) {
+            var d = document.createElement('button');
+            d.className = 'w-2 h-2 rounded-full bg-slate-300 transition-all duration-300';
+            d.setAttribute('aria-label', 'Ir para foto ' + (i + 1));
+            d.addEventListener('click', function () { scrollToCard(i); });
+            dotsEl.appendChild(d);
+            dots.push(d);
+        });
+
+        function updateDots(idx) {
+            dots.forEach(function (d, i) {
+                d.className = i === idx
+                    ? 'w-5 h-2 rounded-full bg-[#2E69AF] transition-all duration-300'
+                    : 'w-2 h-2 rounded-full bg-slate-300 transition-all duration-300';
+            });
+        }
+        updateDots(0);
+
+        /* ─── Largura do card + gap ─── */
+        function cardWidth() {
+            var cards = track.querySelectorAll('.hc-card');
+            if (!cards.length) return 300;
+            return cards[0].offsetWidth + 20; /* width + gap */
+        }
+
+        /* ─── Índice ativo ─── */
+        function activeIndex() {
+            return Math.round(viewport.scrollLeft / cardWidth());
+        }
+
+        /* ─── Scroll para card ─── */
+        function scrollToCard(idx) {
+            var max = photos.length - 1;
+            idx = Math.max(0, Math.min(idx, max));
+            viewport.scrollTo({ left: idx * cardWidth(), behavior: 'smooth' });
+            updateDots(idx);
+        }
+
+        /* ─── Arrows ─── */
+        btnPrev.addEventListener('click', function () { scrollToCard(activeIndex() - 1); });
+        btnNext.addEventListener('click', function () { scrollToCard(activeIndex() + 1); });
+
+        /* ─── Dots sync ao scroll ─── */
+        var scrollTimer;
+        viewport.addEventListener('scroll', function () {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(function () { updateDots(activeIndex()); }, 80);
+        }, { passive: true });
+
+        /* ─── Drag to scroll (mouse) ─── */
+        var isDragging = false, startX, startScroll;
+        viewport.addEventListener('mousedown', function (e) {
+            isDragging = true; startX = e.pageX; startScroll = viewport.scrollLeft;
+            viewport.style.userSelect = 'none';
+        });
+        document.addEventListener('mousemove', function (e) {
+            if (!isDragging) return;
+            viewport.scrollLeft = startScroll - (e.pageX - startX);
+        });
+        document.addEventListener('mouseup', function () {
+            if (!isDragging) return;
+            isDragging = false;
+            viewport.style.userSelect = '';
+            /* Snap ao card mais próximo */
+            scrollToCard(activeIndex());
+        });
+
+        /* ─── Auto-scroll suave (loop infinito, mesma velocidade da rotativa) ─── */
+        var paused = false;
+
+        setInterval(function () {
+            if (paused) return;
+            var next = activeIndex() + 1;
+            if (next >= photos.length) next = 0;
+            scrollToCard(next);
+        }, 3200);
+
+        /* Pausa quando hover */
+        viewport.addEventListener('mouseenter', function () { paused = true; });
+        viewport.addEventListener('mouseleave', function () { paused = false; });
+
+    })();
+    </script>
 
     <!-- SERVICES SECTION -->
     <section id="servicos" class="py-24 px-6 lg:px-16 bg-white">
@@ -307,46 +520,50 @@
                 <p class="reveal text-slate-500 text-sm font-light leading-relaxed md:ml-auto md:max-w-xs md:text-right" style="--reveal-delay:100ms">Tratamentos minuciosos desenvolvidos para preservar a integridade, o toque e a nobreza dos tecidos do seu lar.</p>
             </div>
 
-            <!-- Layout assimétrico: card featured (Tapetes) + lista hairline dos demais -->
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
+            <!-- Layout: colagem editorial de fotos + lista hairline de serviços -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
 
-                <!-- Card featured — Tapetes (diferencial da rotativa, merece destaque) -->
-                <div class="reveal lg:col-span-2 bg-[#112233] text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between min-h-[340px] relative overflow-hidden group">
-                    <!-- Monograma decorativo de fundo -->
-                    <span aria-hidden="true" class="absolute -bottom-6 -right-4 font-serif font-bold text-[8rem] leading-none text-white/[0.05] select-none pointer-events-none">NS</span>
-                    <div>
-                        <div class="reveal-scale w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-[#9BD7F1] text-2xl mb-8 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-layer-group"></i>
-                        </div>
-                        <h3 class="font-serif text-3xl font-bold text-white mb-3">Tapetes</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed font-light mb-6">Limpeza profunda com equipamento rotativo profissional específico para tapetes — raro na região. Remove ácaros, odores e resíduos encrustados sem agredir as fibras.</p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="h-px w-5 bg-[#9BD7F1]/60"></span>
-                        <span class="text-[11px] uppercase font-semibold tracking-[0.18em] text-[#9BD7F1]">Tecnologia Rotativa</span>
+                <!-- Colagem editorial: fotos sobrepostas, meio misturadas -->
+                <div class="reveal relative">
+                    <!-- Halo suave de apoio atrás da montagem -->
+                    <div aria-hidden="true" class="absolute -inset-4 sm:-inset-6 bg-[#9BD7F1]/15 blur-3xl rounded-full"></div>
+
+                    <div class="relative h-[430px] sm:h-[520px] lg:h-[580px]">
+                        <!-- Foto 1: tapete sendo lavado (base, maior) -->
+                        <figure class="absolute left-0 top-0 w-[64%] rotate-[-2.5deg] bg-white p-2 pb-3 rounded-xl shadow-xl transition-transform duration-300 hover:scale-[1.03] hover:rotate-0 hover:z-30">
+                            <img src="3 fotos/WhatsApp Image 2026-09-21 at 17.29.37.jpeg" alt="Tapete sendo lavado com máquina rotativa profissional" loading="lazy" class="h-[240px] sm:h-[300px] lg:h-[340px] w-full object-cover rounded-lg">
+                        </figure>
+                        <!-- Foto 2: cortina (por cima, à direita) -->
+                        <figure class="absolute right-0 top-[10%] w-[47%] z-10 rotate-[3deg] bg-white p-2 pb-3 rounded-xl shadow-xl transition-transform duration-300 hover:scale-[1.03] hover:rotate-0 hover:z-30">
+                            <img src="3 fotos/WhatsApp Image 2026-09-21 at 17.34.27.jpeg" alt="Cortinas claras de pé-direito em ambiente iluminado" loading="lazy" class="h-[200px] sm:h-[250px] lg:h-[290px] w-full object-cover rounded-lg">
+                        </figure>
+                        <!-- Foto 3: centrífuga com tapete (por cima, na base) -->
+                        <figure class="absolute left-1/2 -translate-x-1/2 bottom-0 w-[55%] z-20 rotate-[-1.5deg] bg-white p-2 pb-3 rounded-xl shadow-xl transition-transform duration-300 hover:scale-[1.03] hover:rotate-0 hover:z-30">
+                            <img src="3 fotos/WhatsApp Image 2026-09-21 at 17.34.18.jpeg" alt="Tapete enrolado na centrífuga profissional" loading="lazy" class="h-[170px] sm:h-[210px] lg:h-[240px] w-full object-cover rounded-lg">
+                        </figure>
                     </div>
                 </div>
 
-                <!-- Lista hairline — os 3 outros serviços -->
-                <div class="lg:col-span-3 flex flex-col divide-y divide-slate-100">
+                <!-- Lista hairline — os 3 serviços -->
+                <div class="flex flex-col divide-y divide-slate-100">
 
-                    <!-- Cortinas -->
-                    <div class="reveal group flex items-start gap-5 py-7 hover:bg-slate-50/60 rounded-2xl px-4 -mx-4 transition-colors" style="--reveal-delay:100ms">
-                        <div class="reveal-scale w-12 h-12 rounded-xl bg-[#F4F7FA] flex items-center justify-center text-[#2E69AF] text-lg shrink-0 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors" style="--reveal-delay:100ms">
+                    <!-- Cortinas e Persianas -->
+                    <div class="reveal group flex items-start gap-5 py-7 hover:bg-slate-50/60 rounded-2xl px-4 -mx-4 transition-colors">
+                        <div class="reveal-scale w-12 h-12 rounded-xl bg-[#F4F7FA] flex items-center justify-center text-[#2E69AF] text-lg shrink-0 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors">
                             <i class="fa-solid fa-window-maximize"></i>
                         </div>
                         <div class="flex-1 min-w-0">
                             <div class="flex items-baseline justify-between gap-3 mb-1.5">
-                                <h3 class="font-serif text-xl font-bold text-brandDark">Cortinas</h3>
+                                <h3 class="font-serif text-xl font-bold text-brandDark">Cortinas e Persianas</h3>
                                 <span class="shrink-0 text-[10px] uppercase font-semibold tracking-wider text-[#1f4879] bg-[#9BD7F1]/20 px-2 py-0.5 rounded">Pé-Direito Duplo</span>
                             </div>
-                            <p class="text-slate-500 text-sm font-light leading-relaxed">Higienização completa que deixa as cortinas leves, macias e impecáveis — incluindo atendimento especializado a cortinas de pé-direito duplo.</p>
+                            <p class="text-slate-500 text-sm font-light leading-relaxed">Higienização completa que deixa cortinas e persianas leves, limpas e impecáveis — incluindo atendimento especializado a peças de pé-direito duplo.</p>
                         </div>
                     </div>
 
-                    <!-- Edredons -->
-                    <div class="reveal group flex items-start gap-5 py-7 hover:bg-slate-50/60 rounded-2xl px-4 -mx-4 transition-colors" style="--reveal-delay:200ms">
-                        <div class="reveal-scale w-12 h-12 rounded-xl bg-[#F4F7FA] flex items-center justify-center text-[#2E69AF] text-lg shrink-0 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors" style="--reveal-delay:200ms">
+                    <!-- Edredons e Cobertores -->
+                    <div class="reveal group flex items-start gap-5 py-7 hover:bg-slate-50/60 rounded-2xl px-4 -mx-4 transition-colors" style="--reveal-delay:100ms">
+                        <div class="reveal-scale w-12 h-12 rounded-xl bg-[#F4F7FA] flex items-center justify-center text-[#2E69AF] text-lg shrink-0 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors" style="--reveal-delay:100ms">
                             <i class="fa-solid fa-bed"></i>
                         </div>
                         <div class="flex-1 min-w-0">
@@ -354,21 +571,21 @@
                                 <h3 class="font-serif text-xl font-bold text-brandDark">Edredons e Cobertores</h3>
                                 <span class="shrink-0 text-[10px] uppercase font-semibold tracking-wider text-[#1f4879] bg-[#9BD7F1]/20 px-2 py-0.5 rounded">Cuidado Delicado</span>
                             </div>
-                            <p class="text-slate-500 text-sm font-light leading-relaxed">Lavagem especializada de alto padrão que garante frescor prolongado, leveza absoluta e bem-estar incomparável para suas noites.</p>
+                            <p class="text-slate-500 text-sm font-light leading-relaxed">Lavagem especializada de alto padrão que garante frescor prolongado, leveza e bem-estar.</p>
                         </div>
                     </div>
 
-                    <!-- Estofados -->
-                    <div class="reveal group flex items-start gap-5 py-7 hover:bg-slate-50/60 rounded-2xl px-4 -mx-4 transition-colors" style="--reveal-delay:300ms">
-                        <div class="reveal-scale w-12 h-12 rounded-xl bg-[#F4F7FA] flex items-center justify-center text-[#2E69AF] text-lg shrink-0 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors" style="--reveal-delay:300ms">
-                            <i class="fa-solid fa-couch"></i>
+                    <!-- Tapetes -->
+                    <div class="reveal group flex items-start gap-5 py-7 hover:bg-slate-50/60 rounded-2xl px-4 -mx-4 transition-colors" style="--reveal-delay:200ms">
+                        <div class="reveal-scale w-12 h-12 rounded-xl bg-[#F4F7FA] flex items-center justify-center text-[#2E69AF] text-lg shrink-0 group-hover:bg-[#2E69AF] group-hover:text-white transition-colors" style="--reveal-delay:200ms">
+                            <i class="fa-solid fa-layer-group"></i>
                         </div>
                         <div class="flex-1 min-w-0">
                             <div class="flex items-baseline justify-between gap-3 mb-1.5">
-                                <h3 class="font-serif text-xl font-bold text-brandDark">Estofados</h3>
-                                <span class="shrink-0 text-[10px] uppercase font-semibold tracking-wider text-[#1f4879] bg-[#9BD7F1]/20 px-2 py-0.5 rounded">No local</span>
+                                <h3 class="font-serif text-xl font-bold text-brandDark">Tapetes</h3>
+                                <span class="shrink-0 text-[10px] uppercase font-semibold tracking-wider text-[#1f4879] bg-[#9BD7F1]/20 px-2 py-0.5 rounded">Tecnologia Rotativa</span>
                             </div>
-                            <p class="text-slate-500 text-sm font-light leading-relaxed">Higienização profunda de sofás e poltronas realizada com total comodidade no conforto da sua residência, sem precisar transportar nada.</p>
+                            <p class="text-slate-500 text-sm font-light leading-relaxed">Limpeza profunda com equipamento rotativo profissional específico para tapetes, raro na região. Remove ácaros, odores e resíduos encrustados sem agredir as fibras.</p>
                         </div>
                     </div>
 
@@ -392,7 +609,7 @@
             left: 50%;
             top: 0;
             transform: translate(-50%, -50%);
-            animation: ns-light-drop 6s linear infinite;
+            animation: ns-light-drop 7.5s linear infinite;
         }
         @keyframes ns-light-drop {
             0% { top: 0; opacity: 0; }
@@ -401,11 +618,12 @@
             100% { top: 100%; opacity: 0; }
         }
         /* Brilho sutil nos círculos quando a luz passa (sequência sincronizada) */
-        .step-node { animation: ns-node-glow 6s ease-in-out infinite; will-change: filter; }
+        .step-node { animation: ns-node-glow 7.5s ease-in-out infinite; will-change: filter; }
         .ns-delay-1 { animation-delay: 0s; }
         .ns-delay-2 { animation-delay: 1.5s; }
         .ns-delay-3 { animation-delay: 3s; }
         .ns-delay-4 { animation-delay: 4.5s; }
+        .ns-delay-5 { animation-delay: 6s; }
         @keyframes ns-node-glow {
             0%, 100% { filter: none; }
             4% { filter: brightness(1.1) drop-shadow(0 0 7px rgba(155,215,241,.95)); }
@@ -465,11 +683,11 @@
 
             <div class="relative max-w-3xl lg:max-w-6xl mx-auto">
                 <!-- Trilho da sequência: vertical no mobile, horizontal no desktop -->
-                <div aria-hidden="true" class="absolute left-[27px] sm:left-[31px] lg:left-[12%] lg:right-[12%] top-4 bottom-4 lg:top-[28px] lg:bottom-auto w-px lg:w-auto lg:h-px bg-[#9BD7F1]">
+                <div aria-hidden="true" class="absolute left-[27px] sm:left-[31px] lg:left-[10%] lg:right-[10%] top-4 bottom-4 lg:top-[28px] lg:bottom-auto w-px lg:w-auto lg:h-px bg-[#9BD7F1]">
                     <span class="timeline-light"></span>
                 </div>
 
-                <ol class="relative flex flex-col lg:grid lg:grid-cols-4 gap-10 lg:gap-8">
+                <ol class="relative flex flex-col lg:grid lg:grid-cols-5 gap-10 lg:gap-6">
                     <!-- Passo 1 -->
                     <li class="reveal relative flex lg:flex-col lg:items-center lg:text-center gap-5 pl-16 sm:pl-20 lg:pl-0">
                         <div class="reveal-scale step-node ns-delay-1 absolute left-0 top-0 lg:static w-14 h-14 sm:w-16 sm:h-16 lg:w-14 lg:h-14 rounded-full bg-[#2E69AF] text-white font-sans font-semibold text-base tracking-wider leading-none tabular-nums flex items-center justify-center shrink-0 ring-8 ring-[#F4F7FA] z-10">01</div>
@@ -484,8 +702,8 @@
                         <div class="reveal-scale step-node ns-delay-2 absolute left-0 top-0 lg:static w-14 h-14 sm:w-16 sm:h-16 lg:w-14 lg:h-14 rounded-full bg-[#2E69AF] text-white font-sans font-semibold text-base tracking-wider leading-none tabular-nums flex items-center justify-center shrink-0 ring-8 ring-[#F4F7FA] z-10" style="--reveal-delay:120ms">02</div>
                         <div class="lg:mt-6">
                             <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#2E69AF] block mb-1">Passo 2</span>
-                            <h3 class="font-serif text-xl font-bold text-brandDark mb-2">Retirada na Segunda-feira</h3>
-                            <p class="text-slate-600 text-sm font-light leading-relaxed">Realizamos a retirada das peças organizadamente na segunda-feira, no decorrer do dia.</p>
+                            <h3 class="font-serif text-xl font-bold text-brandDark mb-2">Agendamento de Retirada</h3>
+                            <p class="text-slate-600 text-sm font-light leading-relaxed">Retirada agendada conforme a disponibilidade, com dia e horário combinados pelo WhatsApp.</p>
                         </div>
                     </li>
                     <!-- Passo 3 -->
@@ -493,15 +711,24 @@
                         <div class="reveal-scale step-node ns-delay-3 absolute left-0 top-0 lg:static w-14 h-14 sm:w-16 sm:h-16 lg:w-14 lg:h-14 rounded-full bg-[#2E69AF] text-white font-sans font-semibold text-base tracking-wider leading-none tabular-nums flex items-center justify-center shrink-0 ring-8 ring-[#F4F7FA] z-10" style="--reveal-delay:240ms">03</div>
                         <div class="lg:mt-6">
                             <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#2E69AF] block mb-1">Passo 3</span>
-                            <h3 class="font-serif text-xl font-bold text-brandDark mb-2">Higienização Especializada</h3>
-                            <p class="text-slate-600 text-sm font-light leading-relaxed">Processo avançado com produtos biodegradáveis de alta performance e tecnologia de secagem rápida.</p>
+                            <h3 class="font-serif text-xl font-bold text-brandDark mb-2">Lavagem Especializada</h3>
+                            <p class="text-slate-600 text-sm font-light leading-relaxed">Cada tipo de tecido e peça recebe um processo específico, com produtos e técnicas adequados a cada material.</p>
                         </div>
                     </li>
                     <!-- Passo 4 -->
                     <li class="reveal relative flex lg:flex-col lg:items-center lg:text-center gap-5 pl-16 sm:pl-20 lg:pl-0" style="--reveal-delay:360ms">
-                        <div class="reveal-scale step-node ns-delay-4 absolute left-0 top-0 lg:static w-14 h-14 sm:w-16 sm:h-16 lg:w-14 lg:h-14 rounded-full bg-white text-[#2E69AF] border-2 border-[#2E69AF] font-sans font-semibold text-base tracking-wider leading-none tabular-nums flex items-center justify-center shrink-0 ring-8 ring-[#F4F7FA] z-10" style="--reveal-delay:360ms">04</div>
+                        <div class="reveal-scale step-node ns-delay-4 absolute left-0 top-0 lg:static w-14 h-14 sm:w-16 sm:h-16 lg:w-14 lg:h-14 rounded-full bg-[#2E69AF] text-white font-sans font-semibold text-base tracking-wider leading-none tabular-nums flex items-center justify-center shrink-0 ring-8 ring-[#F4F7FA] z-10" style="--reveal-delay:360ms">04</div>
                         <div class="lg:mt-6">
                             <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#2E69AF] block mb-1">Passo 4</span>
+                            <h3 class="font-serif text-xl font-bold text-brandDark mb-2">Agendamento da Entrega e Pagamento</h3>
+                            <p class="text-slate-600 text-sm font-light leading-relaxed">Combinamos o dia e o horário da entrega e acertamos o pagamento de forma simples e prática.</p>
+                        </div>
+                    </li>
+                    <!-- Passo 5 -->
+                    <li class="reveal relative flex lg:flex-col lg:items-center lg:text-center gap-5 pl-16 sm:pl-20 lg:pl-0" style="--reveal-delay:480ms">
+                        <div class="reveal-scale step-node ns-delay-5 absolute left-0 top-0 lg:static w-14 h-14 sm:w-16 sm:h-16 lg:w-14 lg:h-14 rounded-full bg-white text-[#2E69AF] border-2 border-[#2E69AF] font-sans font-semibold text-base tracking-wider leading-none tabular-nums flex items-center justify-center shrink-0 ring-8 ring-[#F4F7FA] z-10" style="--reveal-delay:480ms">05</div>
+                        <div class="lg:mt-6">
+                            <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#2E69AF] block mb-1">Passo 5</span>
                             <h3 class="font-serif text-xl font-bold text-brandDark mb-2">Entrega Impecável</h3>
                             <p class="text-slate-600 text-sm font-light leading-relaxed">Devolução das peças limpas, macias, perfumadas e prontas para revitalizar o seu ambiente.</p>
                         </div>
@@ -513,25 +740,38 @@
 
     <!-- STRATEGIC HIGHLIGHT SECTION -->
     <section class="py-24 px-6 lg:px-16 bg-gradient-to-br from-[#2E69AF] to-[#1f4879] text-white relative overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="reveal flex items-center justify-center gap-3 mb-6">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="reveal flex items-center justify-center gap-3 mb-10 sm:mb-14">
                 <span aria-hidden="true" class="h-px w-10 bg-[#9BD7F1]/60"></span>
-                <span class="text-xs font-semibold tracking-[0.25em] uppercase text-[#9BD7F1]">Padrão de Excelência NS</span>
+                <span class="text-xs font-semibold tracking-[0.25em] uppercase text-[#9BD7F1] text-center">Padrão de Excelência Lavanderia <strong class="font-extrabold">de tapetes</strong></span>
                 <span aria-hidden="true" class="h-px w-10 bg-[#9BD7F1]/60"></span>
             </div>
-            <h2 class="reveal font-serif text-3xl sm:text-5xl font-bold mb-6 leading-tight" style="--reveal-delay:100ms">
-                Protegendo o investimento e a sofisticação do seu patrimônio têxtil
-            </h2>
-            <p class="reveal text-slate-100/90 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto mb-10" style="--reveal-delay:200ms">
-                Residências de alto padrão exigem rigor técnico absoluto. Unimos inovação em maquinário industrial e sensibilidade artesanal para entregar um resultado visivelmente superior em Arujá.
-            </p>
-            <a href="https://wa.me/5511952613887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="reveal inline-flex items-center gap-3 bg-[#9BD7F1] text-[#112233] px-8 py-4 rounded-full font-medium text-sm tracking-wider uppercase hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white transition-all shadow-xl" style="--reveal-delay:300ms">
-                <i class="fab fa-whatsapp text-lg"></i> Falar com Especialista
-            </a>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+                <!-- Foto: centrífuga profissional (PNG com fundo transparente) -->
+                <figure class="reveal relative mx-auto w-full max-w-md lg:max-w-none" style="--reveal-delay:100ms">
+                    <div aria-hidden="true" class="absolute inset-8 sm:inset-12 rounded-full bg-[#9BD7F1]/25 blur-3xl"></div>
+                    <img src="centrifuga.png" alt="Centrífuga profissional para higienização de tapetes" width="1254" height="1254" loading="lazy" class="relative w-full h-auto drop-shadow-2xl">
+                    <figcaption class="relative mt-4 text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9BD7F1]">Centrífuga profissional</figcaption>
+                </figure>
+
+                <!-- Texto: equipamento de grande porte -->
+                <div class="text-center lg:text-left">
+                    <h2 class="reveal font-serif text-3xl sm:text-4xl xl:text-5xl font-bold mb-6 leading-tight" style="--reveal-delay:150ms">
+                        Protegendo o investimento e a sofisticação do seu patrimônio têxtil
+                    </h2>
+                    <p class="reveal text-slate-100/90 text-base sm:text-lg font-light leading-relaxed mb-10" style="--reveal-delay:250ms">
+                        Além da máquina rotativa para fazer a higienização dos tapetes, contamos com uma centrífuga profissional: um equipamento de grande porte dedicado à higienização de tapetes, uma estrutura rara entre as lavanderias da região. A centrifugação extrai água e resíduos do fundo das fibras, acelera a secagem e preserva o toque, as cores e o caimento das suas peças.
+                    </p>
+                    <a href="https://wa.me/5511952613887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="reveal inline-flex items-center gap-3 bg-[#9BD7F1] text-[#112233] px-8 py-4 rounded-full font-medium text-sm tracking-wider uppercase hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white transition-all shadow-xl" style="--reveal-delay:350ms">
+                        <i class="fab fa-whatsapp text-lg"></i> Falar com Especialista
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- EXCLUSIVE DIFFERENTIATORS -->
+    <!-- DIFFERENTIATORS -->
     <section id="diferenciais" class="py-24 px-6 lg:px-16 bg-white">
         <div class="max-w-6xl mx-auto">
             <!-- Cabeçalho editorial alinhado à esquerda, quebrando o padrão centralizado das demais seções -->
@@ -539,11 +779,11 @@
                 <div class="reveal max-w-xl">
                     <span class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-semibold text-[#2E69AF] mb-5">
                         <span aria-hidden="true" class="h-px w-10 bg-[#2E69AF]/40"></span>
-                        Exclusividade e Tecnologia
+                        Tecnologia e Cuidado
                     </span>
-                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brandDark">Diferenciais Exclusivos</h2>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brandDark">Nossos Diferenciais</h2>
                 </div>
-                <p class="reveal text-slate-600 text-base font-light leading-relaxed md:max-w-xs md:ml-auto md:text-right" style="--reveal-delay:120ms">Os pilares que tornam o nosso serviço único na região para atender às mais altas exigências.</p>
+                <p class="reveal text-slate-600 text-base font-light leading-relaxed md:max-w-xs md:ml-auto md:text-right" style="--reveal-delay:120ms">Os pilares que sustentam o nosso padrão de qualidade para atender às mais altas exigências.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 border-t border-slate-200 pt-12 md:pt-16">
@@ -1389,10 +1629,8 @@
                 <!-- Col 1: Marca -->
                 <div class="lg:col-span-7">
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-full bg-[#9BD7F1] flex items-center justify-center text-[#2E69AF] font-serif font-bold text-base">
-                            NS
-                        </div>
-                        <span class="font-serif font-bold text-xl tracking-wider text-white">NS LAVANDERIA</span>
+                        <img src="assets/logo.png" alt="Logotipo NS Lavanderia" width="40" height="40" class="w-10 h-10 rounded-full object-cover shadow-sm ring-1 ring-[#9BD7F1]/50">
+                        <span class="font-serif text-xl tracking-wider text-white">Lavanderia <strong class="font-bold">de tapetes</strong></span>
                     </div>
                     <p class="text-slate-400 text-sm font-light leading-relaxed max-w-md mb-8">
                         Higiene que se vê, conforto que se sente. O padrão definitivo de cuidado têxtil para residências de alto padrão em Arujá e região.
@@ -1424,7 +1662,7 @@
             </div>
 
             <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center text-xs text-slate-500 font-light text-center">
-                <p>&copy; 2026 NS Lavanderia. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Lavanderia <strong class="font-semibold">de tapetes</strong>. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>

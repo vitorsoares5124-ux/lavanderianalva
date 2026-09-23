@@ -235,142 +235,116 @@
     </script>
 
     <!-- ═══════════════════════════════════════════════════════
-         HERO — CARROSSEL DE FOTOS (mesmo padrão dos carrosséis
-         de vídeo rotativa/cortinas: classes prefixadas com hc-)
+         HERO — TEXTO À ESQUERDA + MONTAGEM 3 FOTOS À DIREITA
     ════════════════════════════════════════════════════════════ -->
     <style>
-        #hc-track {
-            display: flex;
-            gap: 20px;
-            width: max-content;
-            will-change: transform;
-        }
-        .hc-card {
-            position: relative;
-            width: 280px;
-            flex-shrink: 0;
-            border-radius: 20px;
-            overflow: hidden;
-            background: #0f1c2e;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-            transition: transform 0.28s ease, box-shadow 0.28s ease;
-        }
-        @media (min-width: 640px) { .hc-card { width: 320px; } }
-        @media (min-width: 1024px) { .hc-card { width: 360px; } }
-
-        .hc-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 18px 48px rgba(46,105,175,0.25); }
-
-        .hc-card img {
+        /* Montagem editorial: fotos sem moldura, preenchimento total do quadro */
+        .hero-frame { display: flex; flex-direction: column; min-height: 0; }
+        .hero-frame img,
+        .hero-frame video {
+            flex: 1 1 auto;
+            min-height: 0;
             width: 100%;
-            aspect-ratio: 9/16;
+            height: 100%;
             object-fit: cover;
             display: block;
+        }
+        /* Contorno deslocado atrás da foto principal — referência à borda/barra do tapete */
+        .hero-outline {
+            position: absolute;
+            inset: 0;
+            transform: translate(12px, 12px);
+            border: 1px solid rgba(46,105,175,0.35);
+            border-radius: 26px;
             pointer-events: none;
         }
-
-        #hc-viewport { scrollbar-width: none; }
-        #hc-viewport::-webkit-scrollbar { display: none; }
-
-        .hc-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: #fff;
-            border: none;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.14);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: #2E69AF;
-            transition: background 0.2s, transform 0.2s;
+        @media (max-width: 639px) {
+            .hero-outline { transform: translate(8px, 8px); }
         }
-        .hc-arrow:hover { background: #2E69AF; color: #fff; transform: translateY(-50%) scale(1.08); }
-        #hc-prev { left: 8px; }
-        #hc-next { right: 8px; }
-        @media (min-width: 768px) { #hc-prev { left: -22px; } #hc-next { right: -22px; } }
     </style>
 
-    <!-- HERO SECTION -->
-    <section class="relative flex flex-col items-center justify-center px-6 lg:px-16 pt-28 pb-10 sm:pt-32 sm:pb-14 min-h-[82svh] lg:min-h-[92vh] overflow-hidden bg-white">
-        <!-- Fundo editorial: véu suave + trama vertical sutil (trama de tecido) + monograma -->
+    <!-- HERO SECTION — teste: texto à esquerda + 3 fotos à direita -->
+    <section class="relative px-6 lg:px-16 pt-28 pb-10 sm:pt-32 sm:pb-14 min-h-[82svh] lg:min-h-[92vh] overflow-hidden bg-white flex items-center">
+        <!-- Fundo editorial: véu suave + trama vertical sutil (trama de tecido) + monograma atrás das fotos -->
         <div aria-hidden="true" class="absolute inset-0 pointer-events-none">
             <div class="absolute inset-x-0 top-0 h-2/3 bg-gradient-to-b from-[#9BD7F1]/25 via-[#9BD7F1]/10 to-transparent"></div>
-            <div class="absolute inset-0 hidden sm:block [background-image:repeating-linear-gradient(90deg,rgba(46,105,175,0.055)_0_1px,transparent_1px_76px)]"></div>
-            <span class="absolute -bottom-10 left-1/2 -translate-x-1/2 hidden sm:block font-serif font-bold leading-none select-none text-[#2E69AF]/[0.05] text-[34vw] lg:text-[22rem] tracking-tight">NS</span>
-            <div class="absolute inset-x-0 bottom-0 h-px bg-slate-200/70"></div>
+            <div class="absolute inset-x-0 top-0 bottom-28 hidden sm:block [background-image:repeating-linear-gradient(90deg,rgba(46,105,175,0.055)_0_1px,transparent_1px_76px)] [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"></div>
+            <span class="absolute bottom-0 right-0 hidden lg:block font-serif font-bold leading-none select-none text-[#2E69AF]/[0.06] text-[19rem] tracking-tight translate-y-[12%]">NS</span>
         </div>
 
-        <div class="relative max-w-3xl mx-auto text-center z-10 w-full">
-            <!-- Sobretítulo editorial com filetes, sem pílula -->
-            <div class="reveal flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-7">
-                <span aria-hidden="true" class="h-px w-8 sm:w-16 bg-[#2E69AF]/40"></span>
-                <span class="text-[11px] sm:text-xs font-semibold tracking-[0.22em] sm:tracking-[0.3em] uppercase text-[#2E69AF]">Lavanderia <strong class="font-extrabold">de tapetes</strong> · Arujá, São Paulo</span>
-                <span aria-hidden="true" class="h-px w-8 sm:w-16 bg-[#2E69AF]/40"></span>
-            </div>
+        <div class="relative max-w-7xl mx-auto z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 lg:gap-14 items-center">
 
-            <h1 class="reveal font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brandDark mb-0 leading-[1.08]" style="--reveal-delay:80ms">
-                Higiene que se vê, conforto que se sente
-            </h1>
+                <!-- Coluna de texto: centralizada no mobile, à esquerda no desktop -->
+                <div class="text-center sm:text-left">
+                    <!-- Assinatura da marca: logo em destaque + nome em duas linhas -->
+                    <div class="reveal flex items-center justify-center sm:justify-start gap-4 sm:gap-5 mb-7 sm:mb-8">
+                        <img src="assets/logo.png" alt="Logotipo NS Lavanderia de tapetes" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover shadow-md ring-1 ring-[#9BD7F1]/60">
+                        <span class="flex flex-col justify-center items-center sm:items-start leading-tight text-center sm:text-left">
+                            <span class="font-serif text-xl sm:text-2xl text-brandDark">Lavanderia <strong class="font-bold">de tapetes</strong></span>
+                            <span class="mt-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-slate-500">Arujá · São Paulo</span>
+                        </span>
+                    </div>
 
-            <!-- Filete editorial sob o título -->
-            <div aria-hidden="true" class="reveal flex items-center justify-center gap-3 mt-7 mb-7" style="--reveal-delay:160ms">
-                <span class="h-px w-16 bg-[#9BD7F1]"></span>
-                <span class="block w-1.5 h-1.5 rotate-45 bg-[#2E69AF]"></span>
-                <span class="h-px w-16 bg-[#9BD7F1]"></span>
-            </div>
+                    <h1 class="reveal font-serif text-4xl sm:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-brandDark mb-0 leading-[1.08]" style="--reveal-delay:80ms">
+                        Higiene que se vê, conforto que se sente
+                    </h1>
 
-            <p class="reveal text-base sm:text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed mb-8 sm:mb-9" style="--reveal-delay:240ms">
-                O cuidado que a sua casa merece. Excelência e sofisticação inigualáveis na higienização de tapetes, cortinas, edredons e estofados.
-            </p>
+                    <!-- Filete editorial sob o título -->
+                    <div aria-hidden="true" class="reveal flex items-center justify-center sm:justify-start gap-3 mt-7 mb-7" style="--reveal-delay:160ms">
+                        <span class="h-px w-16 bg-[#9BD7F1]"></span>
+                        <span class="block w-1.5 h-1.5 rotate-45 bg-[#2E69AF]"></span>
+                        <span class="h-px w-16 bg-[#9BD7F1]"></span>
+                    </div>
 
-            <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8" style="--reveal-delay:320ms">
-                <a href="https://wa.me/5511952613887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#2E69AF] text-white px-9 py-4 text-sm font-semibold tracking-[0.18em] uppercase inline-flex items-center justify-center gap-3 hover:bg-[#1f4879] transition-all shadow-lg shadow-[#2E69AF]/20">
-                    <i class="fab fa-whatsapp text-lg leading-none"></i> Solicitar Orçamento
-                </a>
-                <a href="#servicos" class="group inline-flex items-center justify-center gap-2 py-2 text-sm font-semibold tracking-[0.18em] uppercase text-[#2E69AF] border-b border-[#2E69AF]/40 hover:border-[#2E69AF] transition-all">
-                    Conhecer Serviços
-                    <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">&rarr;</span>
-                </a>
-            </div>
-        </div>
+                    <p class="reveal text-base sm:text-xl text-slate-600 max-w-xl mx-auto sm:mx-0 font-light leading-relaxed mb-8 sm:mb-9" style="--reveal-delay:240ms">
+                        O cuidado que a sua casa merece. Excelência e sofisticação inigualáveis na higienização de tapetes, cortinas, edredons e estofados.
+                    </p>
 
-        <!-- Carrossel de fotos do trabalho (tapetes e máquinas) -->
-        <div class="reveal relative w-full max-w-6xl mx-auto mt-10 sm:mt-12 z-10" style="--reveal-delay:360ms">
-            <!-- Sombra fade lateral esquerda -->
-            <div aria-hidden="true" class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-20 z-10 bg-gradient-to-r from-white to-transparent"></div>
-            <!-- Sombra fade lateral direita -->
-            <div aria-hidden="true" class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-20 z-10 bg-gradient-to-l from-white to-transparent"></div>
-
-            <!-- Arrow prev -->
-            <button id="hc-prev" class="hc-arrow" aria-label="Foto anterior">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-
-            <!-- Viewport -->
-            <div id="hc-viewport" class="overflow-x-auto py-4 cursor-grab active:cursor-grabbing select-none" role="region" aria-label="Fotos do nosso trabalho">
-                <div id="hc-track">
-                    <!-- Cards gerados via JS abaixo -->
+                    <div class="reveal flex flex-col sm:flex-row items-center sm:items-center justify-center sm:justify-start gap-4 sm:gap-8" style="--reveal-delay:320ms">
+                        <a href="https://wa.me/5511952613887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="bg-[#2E69AF] text-white px-9 py-4 min-h-[44px] text-sm font-semibold tracking-[0.18em] uppercase whitespace-nowrap inline-flex items-center justify-center gap-3 hover:bg-[#1f4879] transition-all shadow-lg shadow-[#2E69AF]/20">
+                            <i class="fab fa-whatsapp text-lg leading-none"></i> Solicitar Orçamento
+                        </a>
+                        <a href="#servicos" class="group inline-flex items-center justify-center gap-2 py-2 min-h-[44px] text-sm font-semibold tracking-[0.18em] uppercase text-[#2E69AF] border-b border-[#2E69AF]/40 hover:border-[#2E69AF] transition-all self-center sm:self-start">
+                            Conhecer Serviços
+                            <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Coluna de vídeo: tapete sendo lavado (oculta no mobile) -->
+                <div class="reveal relative hidden sm:block" style="--reveal-delay:200ms">
+                    <div aria-hidden="true" class="absolute -inset-4 sm:-inset-6 bg-[#9BD7F1]/15 blur-3xl rounded-full"></div>
+
+                    <div class="relative sm:h-[500px] lg:h-[540px]">
+                        <!-- Vídeo único com contorno deslocado (referência à barra do tapete) -->
+                        <figure class="hero-frame reveal relative h-full" style="--reveal-delay:280ms">
+                            <div aria-hidden="true" class="hero-outline"></div>
+                            <video id="hero-video" src="carrossel hero/rthrhgfhn.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Vídeo de tapete sendo lavado com máquina profissional" style="object-position: center top;" class="relative rounded-[26px] shadow-[0_20px_50px_rgba(17,34,51,0.22)]"></video>
+                        </figure>
+                    </div>
+
+                    <!-- Legenda integrada abaixo do vídeo -->
+                    <p class="relative mt-5 sm:mt-6 flex items-center gap-3 text-[11px] sm:text-xs tracking-[0.18em] uppercase text-slate-500">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#2E69AF]/10 text-[#2E69AF] shrink-0" aria-hidden="true"><i class="fa-solid fa-droplet text-xs"></i></span>
+                        <span>Lavagem real · tapete sendo higienizado</span>
+                        <span aria-hidden="true" class="h-px flex-1 bg-[#2E69AF]/15"></span>
+                    </p>
+                </div>
+                <script>
+                    (function () {
+                        /* Pausa o vídeo do hero para quem prefere movimento reduzido */
+                        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                            var v = document.getElementById('hero-video');
+                            if (v) { v.removeAttribute('autoplay'); v.pause(); }
+                        }
+                    })();
+                </script>
             </div>
 
-            <!-- Arrow next -->
-            <button id="hc-next" class="hc-arrow" aria-label="Próxima foto">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-
-            <!-- Dots indicators -->
-            <div id="hc-dots" class="flex items-center justify-center gap-2 mt-6"></div>
-        </div>
-
-        <div class="relative max-w-3xl mx-auto text-center z-10 w-full">
             <!-- Faixa de ancoragem: empilhada com ícones no mobile, em linha no desktop -->
-            <div class="reveal mt-8 sm:mt-10 pt-6 border-t border-slate-200/80" style="--reveal-delay:400ms">
-                <ul class="flex flex-col gap-3 sm:hidden text-xs tracking-[0.14em] uppercase text-slate-500">
+            <div class="reveal mt-12 sm:mt-14 pt-6 border-t border-slate-200/80" style="--reveal-delay:400ms">
+                <ul class="flex flex-col items-center gap-3 sm:hidden text-xs tracking-[0.14em] uppercase text-slate-500">
                     <li class="flex items-center justify-center gap-2.5">
                         <i class="fa-solid fa-location-dot text-[#2E69AF] text-sm w-4 text-center" aria-hidden="true"></i>
                         <span>Jardim Arujamérica</span>
@@ -384,7 +358,7 @@
                         <span>Retirada agendada</span>
                     </li>
                 </ul>
-                <div class="hidden sm:flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs tracking-[0.18em] uppercase text-slate-500">
+                <div class="hidden sm:flex flex-wrap items-center justify-start gap-x-6 gap-y-2 text-xs tracking-[0.18em] uppercase text-slate-500">
                     <span>Jardim Arujamérica</span>
                     <span aria-hidden="true" class="w-1 h-1 rounded-full bg-[#9BD7F1]"></span>
                     <span>Seg a Sex · 8h às 17h</span>
@@ -394,130 +368,6 @@
             </div>
         </div>
     </section>
-
-    <script>
-    (function () {
-        /* ─── Fotos: mesma lógica dos carrosséis rotativa/cortinas ─── */
-        var photos = [
-            { src: 'carrossel hero/rthrth.jpeg', alt: 'Tapete estendido em equipamento de lavagem' },
-            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.34.17.jpeg', alt: 'Tapete enrolado entrando na centrífuga profissional' },
-            { src: 'carrossel hero/thrthtrhr.jpeg', alt: 'Máquina rotativa em ação sobre tapete com espuma' },
-            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.29.36.jpeg', alt: 'Limpeza profunda de tapete com máquina rotativa e espuma' },
-            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.34.18.jpeg', alt: 'Tapete acomodado na centrífuga profissional' },
-            { src: 'carrossel hero/thrhrthrth.jpeg', alt: 'Máquina rotativa higienizando tapete claro' },
-            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.29.37.jpeg', alt: 'Máquina rotativa removendo sujeira de tapete' },
-            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.34.19.jpeg', alt: 'Centrífuga profissional para higienização de tapetes' },
-            { src: 'carrossel hero/WhatsApp Image 2026-09-21 at 17.29.38.jpeg', alt: 'Higienização de tapete com máquina profissional' },
-        ];
-
-        var track    = document.getElementById('hc-track');
-        var viewport = document.getElementById('hc-viewport');
-        var dotsEl   = document.getElementById('hc-dots');
-        var btnPrev  = document.getElementById('hc-prev');
-        var btnNext  = document.getElementById('hc-next');
-
-        if (!track || !viewport) return;
-
-        /* ─── Criar cards ─── */
-        photos.forEach(function (p) {
-            var card = document.createElement('figure');
-            card.className = 'hc-card';
-
-            var img = document.createElement('img');
-            img.src = encodeURI(p.src);
-            img.alt = p.alt;
-            img.loading = 'lazy';
-            img.draggable = false;
-
-            card.appendChild(img);
-            track.appendChild(card);
-        });
-
-        /* ─── Dots ─── */
-        var dots = [];
-        photos.forEach(function (_, i) {
-            var d = document.createElement('button');
-            d.className = 'w-2 h-2 rounded-full bg-slate-300 transition-all duration-300';
-            d.setAttribute('aria-label', 'Ir para foto ' + (i + 1));
-            d.addEventListener('click', function () { scrollToCard(i); });
-            dotsEl.appendChild(d);
-            dots.push(d);
-        });
-
-        function updateDots(idx) {
-            dots.forEach(function (d, i) {
-                d.className = i === idx
-                    ? 'w-5 h-2 rounded-full bg-[#2E69AF] transition-all duration-300'
-                    : 'w-2 h-2 rounded-full bg-slate-300 transition-all duration-300';
-            });
-        }
-        updateDots(0);
-
-        /* ─── Largura do card + gap ─── */
-        function cardWidth() {
-            var cards = track.querySelectorAll('.hc-card');
-            if (!cards.length) return 300;
-            return cards[0].offsetWidth + 20; /* width + gap */
-        }
-
-        /* ─── Índice ativo ─── */
-        function activeIndex() {
-            return Math.round(viewport.scrollLeft / cardWidth());
-        }
-
-        /* ─── Scroll para card ─── */
-        function scrollToCard(idx) {
-            var max = photos.length - 1;
-            idx = Math.max(0, Math.min(idx, max));
-            viewport.scrollTo({ left: idx * cardWidth(), behavior: 'smooth' });
-            updateDots(idx);
-        }
-
-        /* ─── Arrows ─── */
-        btnPrev.addEventListener('click', function () { scrollToCard(activeIndex() - 1); });
-        btnNext.addEventListener('click', function () { scrollToCard(activeIndex() + 1); });
-
-        /* ─── Dots sync ao scroll ─── */
-        var scrollTimer;
-        viewport.addEventListener('scroll', function () {
-            clearTimeout(scrollTimer);
-            scrollTimer = setTimeout(function () { updateDots(activeIndex()); }, 80);
-        }, { passive: true });
-
-        /* ─── Drag to scroll (mouse) ─── */
-        var isDragging = false, startX, startScroll;
-        viewport.addEventListener('mousedown', function (e) {
-            isDragging = true; startX = e.pageX; startScroll = viewport.scrollLeft;
-            viewport.style.userSelect = 'none';
-        });
-        document.addEventListener('mousemove', function (e) {
-            if (!isDragging) return;
-            viewport.scrollLeft = startScroll - (e.pageX - startX);
-        });
-        document.addEventListener('mouseup', function () {
-            if (!isDragging) return;
-            isDragging = false;
-            viewport.style.userSelect = '';
-            /* Snap ao card mais próximo */
-            scrollToCard(activeIndex());
-        });
-
-        /* ─── Auto-scroll suave (loop infinito, mesma velocidade da rotativa) ─── */
-        var paused = false;
-
-        setInterval(function () {
-            if (paused) return;
-            var next = activeIndex() + 1;
-            if (next >= photos.length) next = 0;
-            scrollToCard(next);
-        }, 3200);
-
-        /* Pausa quando hover */
-        viewport.addEventListener('mouseenter', function () { paused = true; });
-        viewport.addEventListener('mouseleave', function () { paused = false; });
-
-    })();
-    </script>
 
     <!-- SERVICES SECTION -->
     <section id="servicos" class="py-24 px-6 lg:px-16 bg-white">
@@ -773,10 +623,13 @@
                 <!-- Texto: equipamento de grande porte -->
                 <div class="text-center lg:text-left">
                     <h2 class="reveal font-serif text-3xl sm:text-4xl xl:text-5xl font-bold mb-6 leading-tight" style="--reveal-delay:150ms">
-                        Protegendo o investimento e a sofisticação do seu patrimônio têxtil
+                        Você conhece a centrífuga de tapetes?
                     </h2>
-                    <p class="reveal text-slate-100/90 text-base sm:text-lg font-light leading-relaxed mb-10" style="--reveal-delay:250ms">
-                        Além da máquina rotativa para fazer a higienização dos tapetes, contamos com uma centrífuga profissional: um equipamento de grande porte dedicado à higienização de tapetes, uma estrutura rara entre as lavanderias da região. A centrifugação extrai água e resíduos do fundo das fibras, acelera a secagem e preserva o toque, as cores e o caimento das suas peças.
+                    <p class="reveal text-slate-100/90 text-base sm:text-lg font-light leading-relaxed mb-5" style="--reveal-delay:250ms">
+                        É um equipamento industrial em formato cilíndrico usado por lavanderias profissionais para remover a água dos tapetes após a lavagem. Ela gira em alta velocidade (geralmente entre 1.300 e 1.800 rotações por minuto). A força centrífuga empurra a água para fora das fibras do tecido. O processo elimina até 95% da água retida no material em poucos minutos.
+                    </p>
+                    <p class="reveal text-slate-100/90 text-base sm:text-lg font-light leading-relaxed mb-10" style="--reveal-delay:300ms">
+                        Evitando que seu tapete fique com água escorrendo e causando mau cheiro e até mesmo apodrecendo a base das tramas.
                     </p>
                     <a href="https://wa.me/5511952613887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="reveal inline-flex items-center gap-3 bg-[#9BD7F1] text-[#112233] px-8 py-4 rounded-full font-medium text-sm tracking-wider uppercase hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white transition-all shadow-xl" style="--reveal-delay:350ms">
                         <i class="fab fa-whatsapp text-lg"></i> Falar com Especialista
@@ -1707,6 +1560,37 @@
             els.forEach(function (el) { observer.observe(el); });
         })();
     </script>
+
+    <!-- Botão flutuante de WhatsApp: fixo no canto inferior direito, com salto suave + brilho -->
+    <style>
+        .wa-float { overflow: hidden; animation: wa-bounce 2.2s ease-in-out infinite; }
+        .wa-float::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 45%;
+            left: -60%;
+            background: linear-gradient(105deg, transparent, rgba(255,255,255,0.55), transparent);
+            transform: skewX(-20deg);
+            animation: wa-shine 2.8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes wa-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes wa-shine {
+            0% { left: -60%; }
+            55%, 100% { left: 130%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .wa-float, .wa-float::after { animation: none !important; }
+        }
+    </style>
+    <a href="https://wa.me/5511952613887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20higieniza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp" class="wa-float fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[#25D366] text-white text-2xl sm:text-[28px] shadow-xl shadow-[#25D366]/30 transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
 
 </body>
 </html>
